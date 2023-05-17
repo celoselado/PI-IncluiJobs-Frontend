@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './assets/paginas/home/Home';
-import Login from './assets/paginas/login/Login';
-import Navbar from './components/estaticos/navbar/Navbar';
-import Footer from './components/estaticos/footer/Footer';
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Navbar from "./assets/components/estaticos/navbar/Navbar";
+import Footer from "./assets/components/estaticos/footer/Footer";
+import Home from "./assets/paginas/home/Home";
+import Login from "./assets/paginas/login/Login";
+import Sobre from "./assets/paginas/sobre/Sobre";
 
 function App() {
-  
-  return(
+  return (
     <BrowserRouter>
     <Navbar />
-    <div style={{ minHeight: '100vh' }}>
-    <Routes> // Antigo Switch
-      <Route path="/" element={<Login />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/home" element={<Home />} />
-    </Routes>
-    </div>
-    <Footer />
+      <div style={{ minHeight: "100vh" }}>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+        </Routes>
+      </div>
+      <Footer />
     </BrowserRouter>
-    );
-  }
-  
-  export default App;
+  );
+}
+
+export default App;
