@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 function Login() {
   return (
     <>
-      <Grid container alignItems="center">
+      <Grid container alignItems="center" className="imgLogin" justifyContent="center">
         <Grid item xs={6}>
           <Box
             display={"flex"}
@@ -69,10 +69,8 @@ function Login() {
               </Typography>
             </Box>
           </Box>
+          </Grid>
         </Grid>
-        <Grid item xs={6} className="imgLogin"></Grid>
-      </Grid>
-      
       <div style={{ minHeight: "100vh" }}>
 
       </div>
