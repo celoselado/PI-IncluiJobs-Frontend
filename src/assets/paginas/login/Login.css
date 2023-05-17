@@ -15,3 +15,8 @@
     background-size: cover;
     background-position: center;
 }
+
+.corLog{
+    background-color: rgba(154, 195, 218, 0.259);
+    color: aliceblue !important;
+    }

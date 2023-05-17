@@ -34,6 +34,7 @@ function Login() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  className="corLog"
                 />
                 <TextField
                   label="Senha"
@@ -41,6 +42,7 @@ function Login() {
                   variant="outlined"
                   margin="normal"
                   fullWidth
+                  className="corLog"
 
                 />
                 <Box marginTop={2} textAlign="center">
