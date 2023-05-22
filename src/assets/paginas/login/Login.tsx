@@ -47,12 +47,13 @@ function Login() {
         className="imgLogin"
         justifyContent="center"
       >
-        <Grid item xs={6}>
+        <Grid>
           <Box
             display={"flex"}
             flexDirection={"column"}
             justifyContent={"center"}
-            paddingX={20}
+            alignItems={"center"}
+            paddingX={8}
             className="fundoLog"
           >
             <form onSubmit={enviar}>
@@ -120,7 +121,6 @@ function Login() {
           </Box>
         </Grid>
       </Grid>
-      <div style={{ minHeight: "100vh" }}></div>
     </>
   );
 }

@@ -1,29 +1,27 @@
-.text-decorator-none{
-    text-decoration: none;
+.text-decorator-none {
+  text-decoration: none;
 }
 
-.textos1{
-    font-weight: bold !important;
-    
-    
+.textos1 {
+  font-weight: bold !important;
 }
 
-.imgLogin{
-    background-image: url('https://i.imgur.com/XPdjuFS.png');
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+.imgLogin {
+  background-image: url("https://univesp.br/sites/58f6506869226e9479d38201/content_entry59021da969226eec50e4a193/60acf5e07c1bd101894dfd7e/files/WhatsApp_Image_2021-05-25_at_10.02.22.jpeg?1684526307");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.corLog{
-    background-color: rgba(220, 227, 231, 0.382);
-    color: aliceblue !important;
-    }
+.corLog {
+  background-color: rgba(220, 227, 231, 0.382);
+  color: aliceblue !important;
+}
 
-    .fundoLog{
-        background-color: rgba(203, 147, 147, 0.556) !important;
-        height: 400px;
-        width: 400px;
-        border-radius: 15px;
-    }
+.fundoLog {
+  background-color: rgba(242, 238, 238, 0.399) !important;
+  height: 380px;
+  width: 280px;
+  border-radius: 15px;
+}

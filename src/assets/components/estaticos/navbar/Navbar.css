@@ -1,4 +1,9 @@
 .text{
     text-decoration: none;
-    color: white;
+    color: black;
+}
+.corNav{
+    background-color: #F6F1E9;
+    color: black;
+    align-items: center;
 }

@@ -13,7 +13,7 @@ function Footer() {
         alignItems="center"
       >
         <Grid item xs={12}>
-          <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
+          <Box style={{ backgroundColor: "#F6F1E9", height: "120px" }}>
             <Box
               paddingTop={1}
               display="flex"
@@ -24,30 +24,30 @@ function Footer() {
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: "white" }}
+                style={{ color: "black" }}
               >
                 Entre em contato ou me siga{" "}
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <a href="https://github.com/IncluiJobs" target="_blank">
-                <GitHub style={{ fontSize: 50, color: "white" }} />
+                <GitHub style={{ fontSize: 50, color: "black" }} />
               </a>
               <a
                 href="https://www.linkedin.com"
                 target="_blank"
               >
-                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
+                <LinkedInIcon style={{ fontSize: 60, color: "black" }} />
               </a>
             </Box>
           </Box>
-          <Box style={{ backgroundColor: "#303F9F", height: "60px" }}>
+          <Box style={{ backgroundColor: "#F6F1E9", height: "60px" }}>
             <Box paddingTop={1}>
               <Typography
                 variant="subtitle2"
                 align="center"
                 gutterBottom
-                style={{ color: "white" }}
+                style={{ color: "black" }}
               >
                 © 2023 Copyright:
               </Typography>
@@ -57,7 +57,7 @@ function Footer() {
                 <Typography
                   variant="subtitle2"
                   gutterBottom
-                  style={{ color: "white" }}
+                  style={{ color: "black" }}
                   align="center"
                 >
                   brasil.generation.org

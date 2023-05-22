@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <>
       <AppBar position="static" className="navbar">
-        <Toolbar variant="dense">
+        <Toolbar variant="dense" className="corNav">
           <Grid container justifyContent={"space-between"}>
             <Box style={{ cursor: "pointer" }}>
               <Typography variant="h5" color="inherit">
