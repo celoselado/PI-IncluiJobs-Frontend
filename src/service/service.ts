@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api= axios.create({
-    baseURL:'https://incluijobs.onrender.com'
+    baseURL:''
 })
 
 export const cadastroUsuario = async (url: any, dados:any, setDados:any) => {

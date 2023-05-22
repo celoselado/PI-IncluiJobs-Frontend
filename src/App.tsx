@@ -10,10 +10,10 @@ import CadastroUsuario from "./assets/paginas/cadastroUsuario/CadastroUsuario";
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
+      <Navbar />
       <div style={{ minHeight: "100vh" }}>
         <Routes>
-        {" "}
+          {" "}
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
