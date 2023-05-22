@@ -1,72 +1,69 @@
-import { Grid,Typography } from "@material-ui/core";
+import { Grid, Link, Typography } from "@material-ui/core";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { GitHub } from "@material-ui/icons";
 import { Box } from "@mui/material";
+import "../footer/Footer.css";
 
 function Footer() {
   return (
     <>
-      <Grid
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
+      <Box
+        className="footerContainer"
+        display={"flex"}
+        alignItems={"center"}
+        style={{ backgroundColor: "#F6F1E9" }}
+        justifyContent={"space-between"}
       >
-        <Grid item xs={12}>
-          <Box style={{ backgroundColor: "#F6F1E9", height: "120px" }}>
-            <Box
-              paddingTop={1}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Typography
-                variant="h5"
-                align="center"
-                gutterBottom
-                style={{ color: "black" }}
-              >
-                Entre em contato ou me siga{" "}
-              </Typography>
-            </Box>
-            <Box display="flex" alignItems="center" justifyContent="center">
-              <a href="https://github.com/IncluiJobs" target="_blank">
-                <GitHub style={{ fontSize: 50, color: "black" }} />
-              </a>
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-              >
-                <LinkedInIcon style={{ fontSize: 60, color: "black" }} />
-              </a>
-            </Box>
+        <Box marginLeft={10}>
+          <img
+            src="/src/images/IncluiJobs-logo-.png"
+            alt="Logo da IncluiJobs"
+            width={200}
+          />
+        </Box>
+        <Box display={"flex"} flexDirection={"column"} gap={2}>
+          <Link href="#">Sobre nós</Link>
+          <Link href="#">Dúvidas Frequentes</Link>
+          <Link href="#">Imprensa</Link>
+          <Link href="#">Novidades</Link>
+        </Box>
+        <Box display={"flex"} flexDirection={"column"} gap={2}>
+          <Link href="#">Colaboradores</Link>
+          <Link href="#">Empegos</Link>
+          <Link href="#">Central de Ajuda</Link>
+          <Link href="#">Fale Conosco</Link>
+        </Box>
+
+        <Box>
+          <Typography className="socialFooter">Siga-nos</Typography>
+          <Box>
+            <a href="https://linktr.ee/incluijobsgithub" target="_blank">
+              <img
+                src="https://icons.iconarchive.com/icons/fa-team/fontawesome-brands/256/FontAwesome-Brands-Square-Github-icon.png"
+                alt="Github"
+                style={{ width: "3em" }}
+              />
+            </a>
+            <a href="https://linktr.ee/vinisilvax" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                alt="LinkedIn"
+                style={{ width: "3em", marginLeft: "15px" }}
+              />
+            </a>
           </Box>
-          <Box style={{ backgroundColor: "#F6F1E9", height: "60px" }}>
-            <Box paddingTop={1}>
-              <Typography
-                variant="subtitle2"
-                align="center"
-                gutterBottom
-                style={{ color: "black" }}
-              >
-                © 2023 Copyright:
-              </Typography>
-            </Box>
-            <Box>
-              <a target="_blank" href="https://brasil.generation.org">
-                <Typography
-                  variant="subtitle2"
-                  gutterBottom
-                  style={{ color: "black" }}
-                  align="center"
-                >
-                  brasil.generation.org
-                </Typography>
-              </a>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
+        </Box>
+        <Box marginRight={10}>
+          <Typography>Agradecimentos à:</Typography>
+          
+            <Link href="brasil.generation.org" style={{color: "#000"}}><img width={150} src="/src/images/generationBrasil-logo.png" alt="" /></Link>
+          
+        </Box>
+      </Box>
+      <Typography className="copyrightFooter">
+        © Copyright 2023 IncluiJobs, Inc. Todos os direitos reservados. As
+        diversas marcas comerciais pertencem a seus respectivos proprietários.
+      </Typography>
     </>
   );
 }

@@ -1,0 +1,22 @@
+* {
+    font-style: normal;
+}
+
+.footerContainer {
+    padding-top: 1.5em;
+}
+
+
+
+.footerLinks{
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.copyrightFooter {
+    background-color: #F6F1E9;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+    padding: 25px;
+}
