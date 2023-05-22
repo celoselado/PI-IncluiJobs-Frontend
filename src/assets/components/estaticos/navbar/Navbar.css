@@ -1,9 +1,27 @@
-.text{
+
+.navbarLink{
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
+    
 }
-.corNav{
+
+.navbarLinks {
+    border-right: 1px solid lightgray;
+    padding: 0 2em;
+}
+
+.navbarLinks:hover {
+    transition: 1s;
+    background-color: gray;
+}
+.navbarLinks:not(hover), .logoutLink {
+    transition: 1s;
+}
+
+.logoutLink {
+    border: 1px solid lightgray;
+}
+
+.navbar {
     background-color: #F6F1E9;
-    color: black;
-    align-items: center;
 }

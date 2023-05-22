@@ -94,7 +94,7 @@ function Login() {
                   }
                 />
                 <Box marginTop={2} textAlign="center">
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className="btnLogin" color="primary">
                       Logar
                     </Button>
                 </Box>
