@@ -7,7 +7,7 @@
 }
 
 .imgLogin {
-  background-image: url("https://univesp.br/sites/58f6506869226e9479d38201/content_entry59021da969226eec50e4a193/60acf5e07c1bd101894dfd7e/files/WhatsApp_Image_2021-05-25_at_10.02.22.jpeg?1684526307");
+  background-image: url("https://media.discordapp.net/attachments/1094735633810997421/1110260404132782090/image.png?width=547&height=341");
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,7 +20,7 @@
 }
 
 .fundoLog {
-  background-color: rgba(242, 238, 238, 0.399) !important;
+  background-color: #F6F1E9!important;
   height: 380px;
   width: 280px;
   border-radius: 15px;

@@ -32,7 +32,7 @@ function Navbar() {
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit">
                   <Link to={"/login"} className="text">
-                    Login
+                    Sair
                   </Link>
                 </Typography>
               </Box>

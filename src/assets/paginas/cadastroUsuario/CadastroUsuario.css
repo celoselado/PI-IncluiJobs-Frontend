@@ -1,8 +1,9 @@
 .imgCadastro {
-    background-image: url("https://i.pinimg.com/564x/4b/a9/c5/4ba9c5575878537eaf72393c21cadd15.jpg");
-    min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("https://univesp.br/sites/58f6506869226e9479d38201/content_entry59021da969226eec50e4a193/60acf5e07c1bd101894dfd7e/files/WhatsApp_Image_2021-05-25_at_10.02.22.jpeg?1684526307");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   }
   .textos2{
     font-weight: bold !important;
@@ -11,3 +12,11 @@
   .btnCancelar{
     margin-right: 20px !important;
   }
+  .corpoLog{
+    background-color: #F6F1E9!important;
+  height: 480px;
+  width: 280px;
+  border-radius: 15px;
+  padding: 50px;
+  }
+  

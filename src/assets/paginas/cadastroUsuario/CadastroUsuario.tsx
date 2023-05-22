@@ -65,7 +65,7 @@ function CadastroUsuario() {
       justifyContent="center"
       className="imgCadastro"
     >
-      <Box paddingX={10}>
+      <Box paddingX={10} className="corpoLog">
         <form onSubmit={cadastrar}>
           <Typography
             variant="h4"
@@ -82,7 +82,6 @@ function CadastroUsuario() {
             variant="outlined"
             margin="normal"
             fullWidth
-            className="corpoLog"
             value={usuario.nome}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
@@ -94,7 +93,6 @@ function CadastroUsuario() {
             variant="outlined"
             margin="normal"
             fullWidth
-            className="corpoLog"
             value={usuario.usuario}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
@@ -107,7 +105,6 @@ function CadastroUsuario() {
             type="Password"
             margin="normal"
             fullWidth
-            className="corpoLog"
             value={usuario.senha}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
@@ -120,7 +117,7 @@ function CadastroUsuario() {
             variant="outlined"
             margin="normal"
             fullWidth
-            className="corpoLog textos2"
+            className=" textos2"
             value={confirmarSenha}
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               confirmSenha(event)
@@ -132,7 +129,7 @@ function CadastroUsuario() {
             variant="outlined"
             margin="normal"
             fullWidth
-            className="corpoLog textos2"
+            className="textos2"
           />
           <Box marginTop={2} textAlign="center">
             <Link to={"/login"} className="text-decoration-none">
