@@ -1,5 +1,5 @@
 .imgCadastro {
-  background-image: url("https://univesp.br/sites/58f6506869226e9479d38201/content_entry59021da969226eec50e4a193/60acf5e07c1bd101894dfd7e/files/WhatsApp_Image_2021-05-25_at_10.02.22.jpeg?1684526307");
+  background-image: url("https://i.postimg.cc/Fzc7jD6n/background-1.jpg");
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,5 +18,6 @@
   width: 280px;
   border-radius: 15px;
   padding: 50px;
+  font-style:italic;
   }
   

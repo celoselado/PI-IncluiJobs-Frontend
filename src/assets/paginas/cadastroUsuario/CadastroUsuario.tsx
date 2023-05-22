@@ -125,7 +125,7 @@ function CadastroUsuario() {
           />
 <TextField
             name="foto"
-            label="foto"
+            label="Foto"
             variant="outlined"
             margin="normal"
             fullWidth

@@ -25,7 +25,7 @@ function Navbar() {
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit">
                   <Link to={"/sobre"} className="text">
-                    Sobre Nós
+                    Sobre
                   </Link>
                 </Typography>
               </Box>
