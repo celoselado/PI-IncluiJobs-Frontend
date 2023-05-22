@@ -13,7 +13,6 @@ function CadastroUsuario() {
     usuario: "",
     foto: "",
     senha: "",
-    postagem: "",
   });
 
   const [usuarioResp, setUsuarioResp] = useState<Usuario>({
@@ -22,7 +21,6 @@ function CadastroUsuario() {
     usuario: "",
     foto: "",
     senha: "",
-    postagem: "",
   });
 
   const [confirmarSenha, setConfirmarSenha] = useState("");

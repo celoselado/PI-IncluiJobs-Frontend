@@ -41,14 +41,19 @@ function Login() {
   }, [token]);
   return (
     <>
-      <Grid container alignItems="center" className="imgLogin" justifyContent="center">
+      <Grid
+        container
+        alignItems="center"
+        className="imgLogin"
+        justifyContent="center"
+      >
         <Grid item xs={6}>
           <Box
             display={"flex"}
             flexDirection={"column"}
             justifyContent={"center"}
             paddingX={20}
-            
+            className="fundoLog"
           >
             <form onSubmit={enviar}>
               <Box>
@@ -59,12 +64,11 @@ function Login() {
                   component={"h3"}
                   align="center"
                   className="textos1"
-                  
-                  
                 >
                   Login
                 </Typography>
                 <TextField
+                  name="usuario"
                   label="Nome de Usuario"
                   variant="outlined"
                   margin="normal"
@@ -76,6 +80,7 @@ function Login() {
                   }
                 />
                 <TextField
+                  name="senha"
                   label="Senha"
                   type="password"
                   variant="outlined"
@@ -86,14 +91,11 @@ function Login() {
                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
                     updateModel(event)
                   }
-
                 />
                 <Box marginTop={2} textAlign="center">
-                  <Link to={"/home"} className="text-decorator-none">
                     <Button type="submit" variant="contained" color="primary">
                       Logar
                     </Button>
-                  </Link>
                 </Box>
               </Box>
             </form>
@@ -104,23 +106,21 @@ function Login() {
                   Não tem uma conta?
                 </Typography>
               </Box>
-              <Link to= "/cadastrar">
-              <Typography
-                variant="subtitle1"
-                gutterBottom
-                align="center"
-                className="textos1"
-              >
-                Cadastre-se
-              </Typography>
+              <Link to="/cadastrar">
+                <Typography
+                  variant="subtitle1"
+                  gutterBottom
+                  align="center"
+                  className="textos1"
+                >
+                  Cadastre-se
+                </Typography>
               </Link>
             </Box>
           </Box>
-          </Grid>
         </Grid>
-      <div style={{ minHeight: "100vh" }}>
-
-      </div>
+      </Grid>
+      <div style={{ minHeight: "100vh" }}></div>
     </>
   );
 }
