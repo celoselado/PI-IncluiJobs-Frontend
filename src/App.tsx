@@ -5,6 +5,7 @@ import Footer from "./assets/components/estaticos/footer/Footer";
 import Home from "./assets/paginas/home/Home";
 import Login from "./assets/paginas/login/Login";
 import Sobre from "./assets/paginas/sobre/Sobre";
+import CadastroUsuario from "./assets/paginas/cadastroUsuario/CadastroUsuario";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cadastrar" element={<CadastroUsuario />} />
         </Routes>
       </div>
       <Footer />

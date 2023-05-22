@@ -1,9 +1,44 @@
 import "./Login.css";
-import { Button, Grid, TextField, Typography } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
+import { Link, useNavigate } from "react-router-dom";
+import { ChangeEvent, useEffect, useState } from "react";
+import useLocalStorage from "react-use-localstorage";
+import UsuarioLogin from "../../../model/UsuarioLogin";
+import { login } from "../../../service/service";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const [token, setToken] = useLocalStorage("token");
+
+  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    token: "",
+  });
+  function updateModel(event: ChangeEvent<HTMLInputElement>) {
+    setUsuarioLogin({
+      ...usuarioLogin,
+      [event.target.name]: event.target.value,
+    });
+  }
+  async function enviar(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+    try {
+      await login("/usuarios/logar", usuarioLogin, setToken);
+      alert("Usuario logado com sucesso");
+    } catch (error) {
+      alert("Usuario e/ou senha inválidos");
+    }
+  }
+  useEffect(() => {
+    if (token !== "") {
+      navigate("/home");
+    }
+  }, [token]);
   return (
     <>
       <Grid container alignItems="center" className="imgLogin" justifyContent="center">
@@ -15,7 +50,7 @@ function Login() {
             paddingX={20}
             
           >
-            <form>
+            <form onSubmit={enviar}>
               <Box>
                 <Typography
                   variant="h4"
@@ -35,6 +70,10 @@ function Login() {
                   margin="normal"
                   fullWidth
                   className="corLog"
+                  value={usuarioLogin.usuario}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateModel(event)
+                  }
                 />
                 <TextField
                   label="Senha"
@@ -43,6 +82,10 @@ function Login() {
                   margin="normal"
                   fullWidth
                   className="corLog"
+                  value={usuarioLogin.senha}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                    updateModel(event)
+                  }
 
                 />
                 <Box marginTop={2} textAlign="center">
@@ -61,6 +104,7 @@ function Login() {
                   Não tem uma conta?
                 </Typography>
               </Box>
+              <Link to= "/cadastrar">
               <Typography
                 variant="subtitle1"
                 gutterBottom
@@ -69,6 +113,7 @@ function Login() {
               >
                 Cadastre-se
               </Typography>
+              </Link>
             </Box>
           </Box>
           </Grid>
