@@ -1,3 +1,13 @@
-.sobre{
-    
+.sobreTexto {
+    margin: 2em 2em;
+    line-height: 2em;
 }
+
+.sobreTexto h1 {
+    margin-bottom: 0.5em;
+}
+
+.sobreImagem {
+    width: 50vw;
+}
+

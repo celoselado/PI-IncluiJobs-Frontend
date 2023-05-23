@@ -1,24 +1,33 @@
 import { Grid } from "@material-ui/core";
-
+import "./Sobre.css"
 function Sobre() {
   return (
     <>
-      <Grid direction="row" style={{ border: "1px solid red" }}>
-        <Grid xs={8} style={{ border: "1px solid red", margin: "18px" }}>
+      <Grid container spacing={1}>
+        <Grid item xs={8} className="sobreTexto">
           <h1>Sobre</h1>
           <p>
-            O objetivo do projeto é criar uma rede social que conecte grupos de
-            pessoas que enfrentam dificuldades para ingressar ou reingressar no
-            mercado de trabalho, como pessoas LGBTQIA+, mulheres, pessoas negras
-            ou pardas, pessoas com deficiência, ex-presidiários, entre outros,
-            com empresas que possuem vagas voltadas para esses grupos. A ideia é
-            criar uma plataforma inclusiva e acessível para que essas pessoas
-            possam encontrar oportunidades e se conectar com outras pessoas em
-            situações similares.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
+            accusantium officiis quas sunt labore, voluptatum perferendis.
+            Numquam obcaecati ipsa aspernatur voluptatem velit ut quo.
+            Perspiciatis harum laudantium odio minus eaque. Lorem ipsum dolor
+            sit, amet consectetur adipisicing elit. At accusantium officiis quas
+            sunt labore, voluptatum perferendis. Numquam obcaecati ipsa
+            aspernatur voluptatem velit ut quo. Perspiciatis harum laudantium
+            odio minus eaque. Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. At accusantium officiis quas sunt labore,
+            voluptatum perferendis. Numquam obcaecati ipsa aspernatur voluptatem
+            velit ut quo. Perspiciatis harum laudantium odio minus eaque. Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. At accusantium
+            officiis quas sunt labore, voluptatum perferendis. Numquam obcaecati
+            ipsa aspernatur voluptatem velit ut quo. Perspiciatis harum
+            laudantium odio minus eaque.
           </p>
         </Grid>
-        <Grid xs={4}>
-          <img src="https://media.discordapp.net/attachments/1094735633810997421/1108382939328294922/close-up-vista-superior-de-jovens-empresarios-de-maos-dadas_515275-299.png?width=472&height=472"></img>
+        <Grid item xs={3}>
+          <img className="sobreImagem"
+            src="/src/images/background-sobre.png"
+          ></img>
         </Grid>
       </Grid>
     </>
