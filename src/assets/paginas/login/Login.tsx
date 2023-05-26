@@ -2,127 +2,83 @@ import "./Login.css";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
 import { ChangeEvent, useEffect, useState } from "react";
-import useLocalStorage from "react-use-localstorage";
 import UsuarioLogin from "../../../model/UsuarioLogin";
 import { login } from "../../../service/service";
+import { addToken } from "../../../store/tokens/actions";
+import { useDispatch } from "react-redux";
 
 function Login() {
-  const navigate = useNavigate();
+  let history = useNavigate();
+  const dispatch = useDispatch();
+  const [token, setToken] = useState('');
 
-  const [token, setToken] = useLocalStorage("token");
+  const [userLogin, setUserLogin] = useState<UsuarioLogin>(
+      {
+          id: 0,
+          nome: '',
+          usuario: '',
+          senha: '',
+          foto: '',
+          token: ''
+      }
+  )
 
-  const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
-    id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    token: "",
-  });
-  function updateModel(event: ChangeEvent<HTMLInputElement>) {
-    setUsuarioLogin({
-      ...usuarioLogin,
-      [event.target.name]: event.target.value,
-    });
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+
+      setUserLogin({
+          ...userLogin,
+          [e.target.name]: e.target.value
+      })
   }
-  async function enviar(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
-    try {
-      await login("/usuarios/logar", usuarioLogin, setToken);
-      alert("Usuario logado com sucesso");
-    } catch (error) {
-      alert("Usuario e/ou senha inválidos");
-    }
+
+  useEffect(()=>{
+      if(token != ''){
+          dispatch(addToken(token))
+          history('/home')
+      }
+  }, [token])
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+      e.preventDefault();
+      try{
+          await login(`/usuarios/logar`, userLogin, setToken)
+
+          alert('Usuário logado com sucesso!');
+      }catch(error){
+          alert('Dados do usuário inconsistentes. Erro ao logar!');
+
+      }
   }
-  useEffect(() => {
-    if (token !== "") {
-      navigate("/home");
-    }
-  }, [token]);
+
   return (
-    <>
-      <Grid
-        container
-        alignItems="center"
-        className="imgLogin"
-        justifyContent="center"
-      >
-        <Grid>
-          <Box
-            display={"flex"}
-            flexDirection={"column"}
-            justifyContent={"center"}
-            alignItems={"center"}
-            paddingX={8}
-            className="fundoLog"
-          >
-            <form onSubmit={enviar}>
-              <Box>
-                <Typography
-                  variant="h4"
-                  gutterBottom
-                  color="textPrimary"
-                  component={"h3"}
-                  align="center"
-                  className="textos1"
-                >
-                  Login
-                </Typography>
-                <TextField
-                  name="usuario"
-                  label="Nome de Usuario"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                  className="corLog"
-                  value={usuarioLogin.usuario}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateModel(event)
-                  }
-                />
-                <TextField
-                  name="senha"
-                  label="Senha"
-                  type="password"
-                  variant="outlined"
-                  margin="normal"
-                  fullWidth
-                  className="corLog"
-                  value={usuarioLogin.senha}
-                  onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                    updateModel(event)
-                  }
-                />
-                <Box marginTop={2} textAlign="center">
-                    <Button type="submit" variant="contained" className="btnLogin" color="primary">
-                      Logar
-                    </Button>
-                </Box>
-              </Box>
-            </form>
+      <>
+          <Grid container direction='row' justifyContent='center' alignItems='center'>
+              <Grid item xs={6} alignItems='center'>
+                  <Box paddingX={20}>
+                      <form onSubmit={onSubmit}>
+                          <Typography variant='h3' gutterBottom color='textPrimary' component="h3" align='center' className='textos1'>Entrar</Typography>
+                          <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label="usuário" variant='outlined' name='usuario' margin='normal' fullWidth />
+                          <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label="senha" variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                          <Box marginTop={2} textAlign='center'>
+                              <Button type="submit" variant="contained" color="primary">Logar</Button>
+                          </Box>
+                      </form>
+                      <Box display="flex" justifyContent="center" marginTop={2}>
+                          <Box marginRight={1}>
+                              <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+                          </Box>
+                          <Link to='/cadastrousuario'>
+                              <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
+                          </Link>
+                      </Box>
+                  </Box>
+              </Grid>
+              <Grid item xs={6} className='imagem'>
 
-            <Box display="flex" justifyContent="center" marginTop={2}>
-              <Box marginRight={1}>
-                <Typography variant="subtitle1" gutterBottom align="center">
-                  Não tem uma conta?
-                </Typography>
-              </Box>
-              <Link to="/cadastrar">
-                <Typography
-                  variant="subtitle1"
-                  gutterBottom
-                  align="center"
-                  className="textos1"
-                >
-                  Cadastre-se
-                </Typography>
-              </Link>
-            </Box>
-          </Box>
-        </Grid>
-      </Grid>
-    </>
-  );
+              </Grid>
+          </Grid>
+      </>
+  )
 }
 
-export default Login;
+export default Login

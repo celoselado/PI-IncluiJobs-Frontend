@@ -40,6 +40,13 @@ function Navbar() {
                     </Link>
                   </Typography>
                 </Box>
+                <Link to="/cadastrarTemas" className='text-decorator-none'>
+                    <Box mx={1} className='hover cursor'>
+                        <Typography variant="h6" color="inherit">
+                            Cadastrar tema
+                        </Typography>
+                    </Box>
+                    </Link>
                 <Box className="navbarLinks">
                   <Typography variant="h6" color="inherit">
                     <Link to={"/sobre"} className="navbarLink">
