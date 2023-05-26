@@ -65,7 +65,7 @@ function CadastroUsuario() {
       justifyContent="center"
       className="imgCadastro"
     >
-      <Box paddingX={10} className="corpoLog">
+      <Box paddingX={10} className="corpoCadastro">
         <form onSubmit={cadastrar}>
           <Typography
             variant="h4"
