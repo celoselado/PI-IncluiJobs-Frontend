@@ -22,8 +22,37 @@
 }
 
 .fundoLog {
-  background-color: #f6f1e9 !important;
+  background-color: rgb(255, 255, 255) !important;
+  align-items: center  !important;
+  border-radius: 60px;
   height: 380px;
   width: 280px;
-  border-radius: 15px;
+
 }
+
+.imgCadastro {
+  background-image: url("https://i.postimg.cc/Fzc7jD6n/background-1.jpg");
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  }
+
+  .textos2{
+    font-weight: bold !important;
+  }
+  
+  .btnCancelar{
+    margin-right: 20px !important;
+  }
+
+  .corpoLog{
+    background-color: #F6F1E9!important;
+  height: 480px ;
+  width: 280px;
+  border-radius: 15px;
+  padding: 50px;
+  font-style: italic;
+  align-items: center !important;
+  }
+  

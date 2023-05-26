@@ -29,3 +29,7 @@
 .navbar {
     background-color: #F6F1E9;
 }
+
+.text-decorator-none{
+    text-decoration: none;
+}

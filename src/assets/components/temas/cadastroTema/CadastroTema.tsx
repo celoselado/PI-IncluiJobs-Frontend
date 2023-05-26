@@ -3,7 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { ChangeEvent, useEffect, useState } from "react";
 import { buscaId, post, put } from "../../../../service/service";
-import { Button, Container, TextField, Typography } from "@material-ui/core";
+import { Box, Button, Container, Grid, TextField, Typography } from "@material-ui/core";
 import Tema from "../../../../model/Tema";
 import "./CadastroTema.css"
 
@@ -76,18 +76,20 @@ function CadastroTema(){
     }
 
     return(
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center">
-                    Cadastro de Temas
-                </Typography>
-                <TextField value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>)=>updatedTema(event)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth></TextField>
-                <TextField value={tema.grupo} onChange={(event: ChangeEvent<HTMLInputElement>)=>updatedTema(event)} id="grupo" label="grupo" variant="outlined" name="grupo" margin="normal" fullWidth></TextField>
-                <Button type="submit" variant="contained" color="primary">
-                    Finalizar
-                </Button>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className="centralizar" >
+            <Box paddingX={20} className="corpoTema" display={'flex'} flexDirection={'column'} justifyContent={'center'} padding={10} >
+                <form onSubmit={onSubmit}>
+                    <Typography variant="h3" color="textSecondary" component="h1" align="center">
+                        Cadastro de Temas
+                    </Typography>
+                    <TextField value={tema.descricao} onChange={(event: ChangeEvent<HTMLInputElement>)=>updatedTema(event)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth></TextField>
+                    <TextField value={tema.grupo} onChange={(event: ChangeEvent<HTMLInputElement>)=>updatedTema(event)} id="grupo" label="grupo" variant="outlined" name="grupo" margin="normal" fullWidth></TextField>
+                    <Button type="submit" variant="contained" color="primary">
+                        Finalizar
+                    </Button>
             </form>
-        </Container>
+            </Box>
+        </Grid>
     )
 }
 

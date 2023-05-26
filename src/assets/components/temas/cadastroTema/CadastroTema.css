@@ -1,0 +1,17 @@
+.corpoTema{
+    background-color: skyblue !important;
+  height: 480px ;
+  width: 280px;
+  border-radius: 15px;
+  padding: 50px;
+  font-style: italic;
+  align-items: center !important;
+  
+  }
+
+  .centralizar {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    }

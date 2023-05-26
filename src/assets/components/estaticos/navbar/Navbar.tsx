@@ -40,8 +40,8 @@ function Navbar() {
                     </Link>
                   </Typography>
                 </Box>
-                <Link to="/cadastrarTemas" className='text-decorator-none'>
-                    <Box mx={1} className='hover cursor'>
+                <Link to="/cadastrarTemas" className="navbarLinks text-decorator-none"  >
+                    <Box mx={1} className='hover cursor text-decorator-none' color="black" >
                         <Typography variant="h6" color="inherit">
                             Cadastrar tema
                         </Typography>
@@ -57,7 +57,7 @@ function Navbar() {
               </Box>
             </Grid>
             <Grid item></Grid>
-            <Box className="logoutLink" paddingX={3}>
+            <Box className="logoutLink navbarLinks" paddingX={3} >
               <Typography variant="h6" color="inherit">
                 <Link to={"/login"} className="navbarLink">
                   Sair
