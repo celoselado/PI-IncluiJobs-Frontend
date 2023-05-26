@@ -38,9 +38,9 @@ function CadastroUsuario() {
 
   async function cadastrar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (usuario.senha === confirmarSenha && usuario.senha.length >= 8) {
+    if (usuario.senha == confirmarSenha && usuario.senha.length >= 8) {
       try {
-        await cadastroUsuario(`/usuarios/cadastrar `, usuario, setUsuarioResp);
+        await cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResp);
         alert("Usuário cadastrado com sucesso");
       } catch (error) {
         alert("Falha ao cadastrar o usuário, verifique os campos");

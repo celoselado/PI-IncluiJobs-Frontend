@@ -1,12 +1,15 @@
-import { Box, Grid } from "@material-ui/core";
-import "./Sobre.css"
+import { Box, Grid, Tooltip, Typography } from "@material-ui/core";
+import "./Sobre.css";
+import { useState } from "react";
+import { Stack } from "@mui/material";
+
 function Sobre() {
   return (
     <>
       <Grid container spacing={1}>
         <Grid item xs={8}>
           <Box className="sobreTexto">
-            <h1>Sobre</h1>
+            <h1>Sobre nós</h1>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
               accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -25,6 +28,8 @@ function Sobre() {
               Perspiciatis harum laudantium odio minus eaque.
             </p>
           </Box>
+          
+          
         </Grid>
 
         <Grid item xs={3}>

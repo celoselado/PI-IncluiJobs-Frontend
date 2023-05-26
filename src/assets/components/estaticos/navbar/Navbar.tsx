@@ -19,12 +19,24 @@ function Navbar() {
             </Grid>
             <Grid item xs={5}>
               <Box display={"flex"} flexDirection={"row"}>
-                <Box
-                  className="navbarLinks"
-                >
+                <Box className="navbarLinks">
                   <Typography variant="h6" color="inherit">
                     <Link to={"/home"} className="navbarLink">
                       Home
+                    </Link>
+                  </Typography>
+                </Box>
+                <Box className="navbarLinks">
+                  <Typography variant="h6" color="inherit">
+                    <Link to={"/postagens"} className="navbarLink">
+                      Postagens
+                    </Link>
+                  </Typography>
+                </Box>
+                <Box className="navbarLinks">
+                  <Typography variant="h6" color="inherit">
+                    <Link to={"/temas"} className="navbarLink">
+                      Temas
                     </Link>
                   </Typography>
                 </Box>
@@ -38,8 +50,7 @@ function Navbar() {
               </Box>
             </Grid>
             <Grid item></Grid>
-            <Box className="logoutLink" paddingX={3}
-            >
+            <Box className="logoutLink" paddingX={3}>
               <Typography variant="h6" color="inherit">
                 <Link to={"/login"} className="navbarLink">
                   Sair
