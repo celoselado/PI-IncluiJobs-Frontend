@@ -1,9 +1,11 @@
 import { Box, Grid, Tooltip, Typography } from "@material-ui/core";
 import "./Sobre.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Stack } from "@mui/material";
+import Navbar from "../../components/estaticos/navbar/Navbar";
 
 function Sobre() {
+  
   return (
     <>
       <Grid container spacing={1}>
@@ -28,8 +30,9 @@ function Sobre() {
               Perspiciatis harum laudantium odio minus eaque.
             </p>
           </Box>
+
           
-          
+
         </Grid>
 
         <Grid item xs={3}>

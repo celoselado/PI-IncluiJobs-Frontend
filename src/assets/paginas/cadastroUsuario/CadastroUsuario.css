@@ -5,19 +5,22 @@
   background-size: cover;
   background-position: center;
   }
-  .textos2{
-    font-weight: bold !important;
-  }
+  
   
   .btnCancelar{
     margin-right: 20px !important;
+    background-color: #009077 !important;
   }
-  .corpoCadastro{
-    background-color: #F6F1E9!important;
-  height: 480px;
-  width: 280px;
-  border-radius: 15px;
-  padding: 50px;
-  font-style: italic;
+  .containerCadastro{
+    background-color: #F6F1E9;
+      border-radius: 15px;
+      align-items: center;
+      padding: 3em;
+      max-width: 30%;
   }
+
+    .BtnCadastrar {
+      background-color: #009077 !important;
+      color: #F6F1E9 !important;
+    }
   

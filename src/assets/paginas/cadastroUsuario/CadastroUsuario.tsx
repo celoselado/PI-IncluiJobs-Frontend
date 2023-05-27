@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import "./CadastroUsuario.css";
-import { Grid, Box, Typography, TextField, Button } from "@mui/material";
+import { Grid, Box, Typography, TextField, Button, Autocomplete } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../../model/Usuario";
 import { cadastroUsuario } from "../../../service/service";
@@ -61,11 +61,16 @@ function CadastroUsuario() {
   return (
     <Grid
       container
+      direction="row"
       alignItems="center"
       justifyContent="center"
       className="imgCadastro"
     >
-      <Box paddingX={10} className="corpoCadastro">
+      <Box
+        className="containerCadastro"
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <form onSubmit={cadastrar}>
           <Typography
             variant="h4"
@@ -123,13 +128,12 @@ function CadastroUsuario() {
               confirmSenha(event)
             }
           />
-<TextField
+          <TextField
             name="foto"
             label="Foto"
             variant="outlined"
             margin="normal"
             fullWidth
-            className="textos2"
           />
           <Box marginTop={2} textAlign="center">
             <Link to={"/login"} className="text-decoration-none">
@@ -141,7 +145,7 @@ function CadastroUsuario() {
                 Cancelar
               </Button>
             </Link>
-            <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="contained" className="BtnCadastrar">
               Cadastrar
             </Button>
           </Box>

@@ -6,6 +6,7 @@ import UsuarioLogin from "../../../model/UsuarioLogin";
 import { login } from "../../../service/service";
 import { addId, addToken } from "../../../store/tokens/actions";
 import { useDispatch } from "react-redux";
+import { Stack } from "@mui/material";
 
 function Login() {
   let history = useNavigate();
@@ -46,8 +47,8 @@ function Login() {
 
   useEffect(() => {
     if (respUserLogin.token !== "") {
-      dispatch(addToken(respUserLogin.token))
-      dispatch(addId(respUserLogin.id.toString()))
+      dispatch(addToken(respUserLogin.token));
+      dispatch(addId(respUserLogin.id.toString()));
       history("/home");
     }
   }, [respUserLogin.token]);
@@ -70,65 +71,69 @@ function Login() {
         direction="row"
         justifyContent="center"
         alignItems="center"
-        className="imgCadastro"
+        className="containerLogin"
       >
         <Box
-          className="corpoLog"
+          className="containerLogin-form"
           display={"flex"}
           flexDirection={"column"}
-          justifyContent={"center"}
         >
           <form onSubmit={onSubmit}>
             <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
+              variant="h4"
+              style={{ marginBottom: "1em" }}
+              component="h4"
               align="center"
-              className="textos1"
             >
               Entrar
             </Typography>
-            <TextField
-              value={userLogin.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="usuario"
-              label="usuário"
-              variant="outlined"
-              name="usuario"
-              margin="normal"
-              fullWidth
-            />
-            <TextField
-              value={userLogin.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="senha"
-              label="senha"
-              variant="outlined"
-              name="senha"
-              margin="normal"
-              type="password"
-              fullWidth
-              className="inputCadastro"
-            />
-            <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
-                Logar
-              </Button>
-            </Box>
+            <Stack className="login-inputs" gap={2}>
+              <TextField
+                value={userLogin.usuario}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="usuario"
+                label="Usuário"
+                variant="outlined"
+                name="usuario"
+                size="small"
+              />
+              <TextField
+                value={userLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="senha"
+                label="Senha"
+                variant="outlined"
+                name="senha"
+                type="password"
+                size="small"
+              />
+
+              <Box marginTop={2} textAlign="center">
+                <Button
+                  type="submit"
+                  variant="contained"
+                  className="loginBtn"
+                  fullWidth
+                >
+                  Logar
+                </Button>
+              </Box>
+            </Stack>
           </form>
-          <Box display="flex" justifyContent="center" marginTop={2}>
+          <Box display="flex" justifyContent="center" marginTop={4}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/cadastrar">
+            <Link
+              to="/cadastrar"
+              style={{ textDecoration: "none", color: "#009077" }}
+            >
               <Typography
                 variant="subtitle1"
-                gutterBottom
                 align="center"
-                className="textos1"
+                style={{ fontWeight: "bold" }}
               >
                 Cadastre-se
               </Typography>
