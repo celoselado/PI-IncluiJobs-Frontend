@@ -1,11 +1,27 @@
-import { AppBar, Grid, Toolbar, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  Button,
+  Grid,
+  Menu,
+  MenuItem,
+  Popover,
+  Toolbar,
+  Typography,
+} from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { addToken } from "../../../../store/tokens/actions";
-function Navbar() {
+import React from "react";
+import PopupState, {
+  bindTrigger,
+  bindMenu,
+  bindPopover,
+} from "material-ui-popup-state";
+
+function Navbar(): JSX.Element {
   const navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -25,8 +41,14 @@ function Navbar() {
     navbarComponent = (
       <AppBar position="static" className="navbarContainer">
         <Toolbar className="navbar">
-          <Grid container alignItems="center" xs={12} direction="row">
-            <Grid item xs={4}>
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            xs={12}
+            direction="row"
+          >
+            <Grid item xs={5}>
               <Box style={{ cursor: "pointer" }}>
                 <img
                   src="/src/images/IncluiJobs-logo-.png"
@@ -35,8 +57,8 @@ function Navbar() {
                 />
               </Box>
             </Grid>
-            <Grid item xs={8}>
-              <Box display={"flex"} flexDirection={"row"}>
+            <Grid item xs={7}>
+              <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
                 <Box className="navbarLinks">
                   <Typography variant="h6" color="inherit">
                     <Link to={"/home"} className="navbarLink">
@@ -72,32 +94,51 @@ function Navbar() {
                     </Typography>
                   </Box>
                 </Link>
-                <Box className="navbarLinks">
+                <Box className="navbarLinks" borderRight={"none"}>
                   <Typography variant="h6" color="inherit">
                     <Link to={"/sobre"} className="navbarLink">
                       Sobre
                     </Link>
                   </Typography>
                 </Box>
-                <Box className="logoutLink navbarLinks" paddingX={3}>
-                  <Typography variant="h6" color="inherit">
-                    <Link
-                      to={"/login"}
-                      className="navbarLink"
-                      onClick={goLogout}
-                    >
-                      Sair
-                    </Link>
-                  </Typography>
-                </Box>
-                <Box>
-                  <Link to={'/perfil'}>
-                  <img
-                    src="https://i.imgur.com/qAvGiPV.gif"
-                    alt=""
-                    className="imgPerfil"/>
-                  </Link>
-                  
+
+                <Box marginLeft={5} className="logoutLink navbarLinks">
+                  <PopupState variant="popover" popupId="demo-popup-menu">
+                    {(popupState) => (
+                      <React.Fragment>
+                        <Button {...bindTrigger(popupState)}>Conta</Button>
+
+                        <Menu {...bindMenu(popupState)}>
+                          <Link
+                            to={"/perfil"}
+                            style={{
+                              textDecoration: "none",
+                              color: "#000000",
+                            }}
+                          >
+                            <MenuItem onClick={popupState.close}>
+                              Perfil
+                            </MenuItem>
+                          </Link>
+                          {/*<MenuItem onClick={popupState.close}>
+                              Link adicional
+                      </MenuItem>*/}
+                          <Link
+                            to={"/login"}
+                            className="navbarLink"
+                            onClick={goLogout}
+                          >
+                            <MenuItem
+                              className="logoutLink navbarLinks"
+                              onClick={popupState.close}
+                            >
+                              Sair
+                            </MenuItem>
+                          </Link>
+                        </Menu>
+                      </React.Fragment>
+                    )}
+                  </PopupState>
                 </Box>
               </Box>
             </Grid>
