@@ -1,201 +1,127 @@
 .sobreTexto {
-    margin: 2em 2em;
+    margin: 2em;
     line-height: 2em;
     border-bottom: 1px solid lightgray;
     padding-bottom: 3em;
+    height: 50vh;
+    width: 60vw;
 }
 
 .sobreTexto h1 {
     margin-bottom: 0.5em;
+    
 }
 
 .sobreImagem {
-    width: 40vw;
-}
-
-.sobre-fotoDev{
-    width: 20%;
-    padding: 0px;
-}
-
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-* {
-    margin: 0;
-    font: inherit;
+    background-image: url(/src/images/background-sobre.png);
+    height: 63vh;
+    background-repeat: repeat-y;
+    background-position: center top;
+    width: 35vw;
 }
 
 
 
-ul:where([role="list"]) {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.person {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    margin: auto 25px;
 }
 
 .container {
-    width: min(100% - 2rem, 60rem);
-    margin-inline: auto;
-}
-
-section {
-    padding-block: clamp(2rem, 5vw, 5rem);
-}
-
-.grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns:
-        repeat(auto-fit, minmax(min(35ch, 100%), 1fr));
-}
-
-.section-title {
-    font-size: clamp(2rem, 5vw, 3rem);
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 0.5em;
-}
-
-.flex-group {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.flow-content {
-    display: grid;
-    align-content: start;
-    gap: 1rem;
-}
-
-[data-spacing="sm"] {
-    gap: 0.25rem;
-}
-
-.mx-auto {
-    width: fit-content;
-    margin-inline: auto;
-}
-
-.card {
-    background-color: #14273e;
-    width: min(100% - 2rem, 35ch);
-    margin-inline: auto;
-    text-align: center;
-    border-radius: 0.5rem;
-    position: relative;
-    overflow: hidden;
-    display: grid;
-    gap: 0.5rem;
-}
-
-.card__name {
-    font-weight: 700;
-}
-
-.card__position {
-    font-style: italic;
-    color: #ccc;
-}
-
-.card__img {
-    width: 5rem;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
     border-radius: 50%;
-    border: 2px solid #ddd;
+    height: 312px;
+    -webkit-tap-highlight-color: transparent;
+    transform: scale(0.48);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 400px;
 }
 
-.card__front {
-    padding: 2em 2em 2.5em 2em;
-    transition:
-        opacity 250ms ease,
-        transform 450ms ease;
+.container:after {
+    background-color: #f2f2f2;
+    content: "";
+    height: 10px;
+    position: absolute;
+    top: 390px;
+    width: 100%;
 }
 
-.card[data-visible="false"] .card__front {
-    opacity: 1;
-    transform: translateY(0);
+.container:hover {
+    transform: scale(0.54);
 }
 
-.card__footer {
-    background-color: #0d1a2d;
-    height: 1.5rem;
+.container-inner {
+    clip-path: path("M 390,400 C 390,504.9341 304.9341,590 200,590 95.065898,590 10,504.9341 10,400 V 10 H 200 390 Z"
+        );
     position: relative;
-    z-index: 5;
+    transform-origin: 50%;
+    top: -200px;
 }
 
-.card__back {
-    position: absolute;
-    padding: 2em 2em 2.5em 2em;
-    inset: 0;
-    transition:
-        transform 450ms ease,
-        opacity 150ms ease;
-    z-index: 1;
-    overflow: auto;
-}
-
-.card[data-visible="false"] .card__back {
-    opacity: 0;
-    transform: translateY(100%);
-}
-
-.card[data-visible="true"] .card__front {
-    opacity: 0;
-    transform: translateY(100%);
-    transition:
-        opacity 150ms ease,
-        transform 450ms ease 50ms;
-}
-
-.card[data-visible="true"] .card__back {
-    opacity: 1;
-    transform: translateY(0);
-    transition:
-        transform 350ms ease,
-        opacity 450ms ease 100ms;
-}
-
-.card__social {
-    justify-content: center;
-    margin-bottom: 2em;
-}
-
-.card__toggle {
-    text-align: 1;
+.circle {
+    
+    background-color: #fee7d3;
     border-radius: 50%;
-    width: 3rem;
-    aspect-ratio: 1 / 1;
-    padding: 0.5em;
-    background-image: url(https://em-content.zobj.net/source/microsoft-teams/363/plus_2795.png);
-    border: 0;
-    background-color: rgb(255, 255, 255);
-    color: #fff;
-
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
     cursor: pointer;
-    transition: background-color 250ms ease;
+    height: 380px;
+    left: 10px;
+    pointer-events: none;
+    position: absolute;
+    top: 210px;
+    width: 380px;
 }
 
-.card__toggle-icon {
-    transition: rotate 250ms ease;
+.img {
+    pointer-events: none;
+    position: relative;
+    transform: translateY(20px) scale(1.15);
+    transform-origin: 50% bottom;
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.card[data-visible="true"] .card__toggle {
-    background-color: crimson;
+.container:hover .img {
+    transform: translateY(0) scale(1.2);
 }
 
-.card[data-visible="true"] .card__toggle-icon {
-    rotate: 315deg;
+.img1 {
+    left: 22px;
+    top: 164px;
+    width: 340px;
 }
+
+.img2 {
+    left: -46px;
+    top: 174px;
+    width: 444px;
+}
+
+.img3 {
+    left: -16px;
+    top: 144px;
+    width: 466px;
+}
+
+.divider {
+    background-color: #ca6060;
+    height: 1px;
+    width: 160px;
+}
+
+.name {
+    color: #404245;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.title {
+    color: #6e6e6e;
+    font-family: arial;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 4px;
+}
+

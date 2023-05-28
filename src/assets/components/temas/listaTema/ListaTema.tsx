@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../../service/service";
-import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
 import Tema from "../../../../model/Tema";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { addToken } from "../../../../store/tokens/actions";
@@ -46,57 +46,61 @@ function ListaTema() {
     }, [])
 
     return (
-        <>
-            {temas.map((tema) => (
-                <Box m={2}>
-                    <Card variant="outlined">
-                        <CardContent>
-                            <Typography color="textSecondary" gutterBottom>
-                                Tema
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                {tema.descricao}
-                            </Typography>
-                            <Typography color="textSecondary" gutterBottom>
-                                Grupo
-                            </Typography>
-                            <Typography variant="h5" component="h2">
-                                {tema.grupo}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Box display="flex" justifyContent="center" mb={1.5}>
-                                <Link
-                                    to={`/cadastrarTemas/${tema.id}`}
-                                    className="text-decorator-none"
-                                >
-                                    <Box mx={1}>
-                                        <Button
-                                            variant="contained"
-                                            className="marginLeft"
-                                            size="small"
-                                            color="primary"
-                                        >
-                                            atualizar
-                                        </Button>
-                                    </Box>
-                                </Link>
-                                <Link
-                                    to={`/deletarTema/${tema.id}`}
-                                    className="text-decorator-none"
-                                >
-                                    <Box mx={1}>
-                                        <Button variant="contained" size="small" color="secondary">
-                                            deletar
-                                        </Button>
-                                    </Box>
-                                </Link>
-                            </Box>
-                        </CardActions>
-                    </Card>
+      <>
+        {temas.map((tema) => (
+          <Box m={2}>
+            <Card variant="outlined">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom>
+                  Tema
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.descricao}
+                </Typography>
+                <Typography color="textSecondary" gutterBottom>
+                  Grupo
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.grupo}
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
+                  <Link
+                    to={`/cadastrarTemas/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="marginLeft"
+                        size="small"
+                        color="primary"
+                      >
+                        atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link
+                    to={`/deletarTema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        color="secondary"
+                      >
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
                 </Box>
-            ))}
-        </>
+              </CardActions>
+            </Card>
+          </Box>
+        ))}
+      </>
     );
 }
 
