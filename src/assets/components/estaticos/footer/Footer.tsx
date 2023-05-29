@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { addToken } from "../../../../store/tokens/actions";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function Footer() {
   const navigate = useNavigate();
@@ -18,7 +19,16 @@ function Footer() {
 
   function goLogout() {
     dispatch(addToken(""));
-    alert("Usuario deslogado");
+    toast.warn('Usuário Deslogado!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     navigate("/login");
   }
 

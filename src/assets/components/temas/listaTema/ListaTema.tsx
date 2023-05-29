@@ -7,6 +7,7 @@ import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@
 import Tema from "../../../../model/Tema";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { addToken } from "../../../../store/tokens/actions";
+import { toast } from "react-toastify";
 
 function ListaTema() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -27,7 +28,16 @@ function ListaTema() {
             })
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O seu token expirou, logue novamente')
+              toast.warn('Seu token expirou, logue novamente!', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
                 dispatch(addToken(''))
                 navigate('/login')
             }
@@ -40,7 +50,16 @@ function ListaTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+          toast.error('Você precisa estar logado!', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            });
             navigate('/login')
         }
     }, [])

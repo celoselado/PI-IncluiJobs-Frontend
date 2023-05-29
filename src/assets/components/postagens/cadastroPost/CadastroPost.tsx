@@ -18,6 +18,7 @@ import Tema from "../../../../model/Tema";
 import { busca, buscaId, put, post } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import Usuario from "../../../../model/Usuario";
+import { toast } from "react-toastify";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -36,7 +37,16 @@ function CadastroPost() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado!");
+      toast.error('Você precisa estar logado!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       navigate("/login");
     }
   }, [token]);
@@ -116,14 +126,32 @@ function CadastroPost() {
           Authorization: token,
         },
       });
-      alert("Postagem atualizada com sucesso");
+      toast.success('Postagem atualizada com sucesso!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } else {
       post(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Postagem cadastrada com sucesso!");
+      toast.success('Postagem cadastrada com sucesso!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
     back();
   }

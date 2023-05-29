@@ -20,6 +20,7 @@ import PopupState, {
   bindMenu,
   bindPopover,
 } from "material-ui-popup-state";
+import { toast } from "react-toastify";
 
 function Navbar(): JSX.Element {
   const navigate = useNavigate();
@@ -31,7 +32,16 @@ function Navbar(): JSX.Element {
 
   function goLogout() {
     dispatch(addToken(""));
-    alert("Usuario deslogado");
+    toast.warn('Usuário Deslogado!', {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      });
     navigate("/login");
   }
 
