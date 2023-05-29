@@ -123,6 +123,16 @@ function Login() {
                 variant="outlined"
                 name="senha"
                 type="password"
+                error={
+                  userLogin.senha.length < 8 &&
+                  userLogin.senha.length > 0
+                }
+                helperText={
+                  userLogin.senha.length < 8 &&
+                  userLogin.senha.length > 0
+                    ? "A senha tem que ter mais de 8 caracteres"
+                    : ""
+                }
                 size="small"
               />
 
