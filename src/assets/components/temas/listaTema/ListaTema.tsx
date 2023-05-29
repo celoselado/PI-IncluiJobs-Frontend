@@ -3,89 +3,90 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { busca } from "../../../../service/service";
-import {  Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, Grid, Typography } from "@material-ui/core";
 import Tema from "../../../../model/Tema";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { addToken } from "../../../../store/tokens/actions";
 import "./ListaTema.css"
 import { toast } from "react-toastify";
-import {Box} from '@mui/material'
+import { Box } from '@mui/material'
 
 function ListaTema() {
-    const [temas, setTemas] = useState<Tema[]>([])
-    const navigate = useNavigate();
-    const token = useSelector<TokenState, TokenState["tokens"]>(
-        (state) => state.tokens
-    );
+  const [temas, setTemas] = useState<Tema[]>([])
+  const navigate = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    async function getTemas() {
-        // alterado a função pra dentro de um try catch, para poder verificar a validade do token do usuário
-        try {
-            await busca('/temas', setTemas, {
-                headers: {
-                    Authorization: token
-                }
-            })
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-              toast.warn('Seu token expirou, logue novamente!', {
-                position: "top-center",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-                });
-                dispatch(addToken(''))
-                navigate('/login')
-            }
+  async function getTemas() {
+    // alterado a função pra dentro de um try catch, para poder verificar a validade do token do usuário
+    try {
+      await busca('/temas', setTemas, {
+        headers: {
+          Authorization: token
         }
+      })
+    } catch (error: any) {
+      if (error.toString().includes('403')) {
+        toast.warn('Seu token expirou, logue novamente!', {
+          position: "top-center",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
+        dispatch(addToken(''))
+        navigate('/login')
+      }
     }
+  }
 
-    useEffect(() => {
-        getTemas()
-    }, [])
+  useEffect(() => {
+    getTemas()
+  }, [])
 
-    useEffect(() => {
-        if (token === '') {
-          toast.error('Você precisa estar logado!', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            });
-            navigate('/login')
-        }
-    }, [])
+  useEffect(() => {
+    if (token === '') {
+      toast.error('Você precisa estar logado!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      navigate('/login')
+    }
+  }, [])
 
-    return (
-      <>
+  return (
+    <>
+      <Grid container>
         {temas.map((tema) => (
-          <Box m={2} >
-            <Card  className="cardTemas">
-              <CardContent >
-                <Typography color="textSecondary" gutterBottom>
+          <Box m={1} >
+            <Card className="cardTemas" >
+              <CardContent className="cardTemas2">
+                <Typography color="textSecondary" variant="h4" gutterBottom>
                   Tema
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h4" component="h2">
                   {tema.descricao}
                 </Typography>
-                <Typography color="textSecondary" gutterBottom>
+                <Typography color="textSecondary" variant="h4" gutterBottom>
                   Grupo
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h4" component="h2">
                   {tema.grupo}
                 </Typography>
               </CardContent>
-              <CardActions>
+              <CardActions className="cardTemas2">
                 <Box display="flex" justifyContent="center" mb={1.5}>
                   <Link
                     to={`/cadastrarTemas/${tema.id}`}
@@ -94,9 +95,8 @@ function ListaTema() {
                     <Box mx={1}>
                       <Button
                         variant="contained"
-                        className="marginLeft"
+                        className="marginLeft btnAtualizar"
                         size="small"
-                        color="primary"
                       >
                         atualizar
                       </Button>
@@ -110,7 +110,8 @@ function ListaTema() {
                       <Button
                         variant="contained"
                         size="small"
-                        color="secondary"
+                        className="btnDeletar"
+                        
                       >
                         deletar
                       </Button>
@@ -121,8 +122,9 @@ function ListaTema() {
             </Card>
           </Box>
         ))}
-      </>
-    );
+      </Grid>
+    </>
+  );
 }
 
 export default ListaTema;
