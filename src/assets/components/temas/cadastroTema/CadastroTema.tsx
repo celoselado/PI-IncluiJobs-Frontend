@@ -4,7 +4,6 @@ import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { ChangeEvent, useEffect, useState } from "react";
 import { buscaId, post, put } from "../../../../service/service";
 import {
-  Box,
   Button,
   Container,
   Grid,
@@ -13,6 +12,8 @@ import {
 } from "@material-ui/core";
 import Tema from "../../../../model/Tema";
 import "./CadastroTema.css";
+import { toast } from "react-toastify";
+import {Box} from '@mui/material'
 
 function CadastroTema() {
   let navigate = useNavigate();
@@ -28,7 +29,17 @@ function CadastroTema() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado!");
+      toast.error('Você precisa estar logado!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+    navigate("/login")
       navigate("/login");
     }
   }, [token]);
@@ -65,14 +76,32 @@ function CadastroTema() {
           Authorization: token,
         },
       });
-      alert("Tema atualizado com sucesso");
+      toast.success('Tema atualizado com sucesso!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     } else {
       post(`/temas`, tema, setTema, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Tema cadastrado com sucesso!");
+      toast.success('Tema cadastrado com sucesso!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
     }
     back();
   }
