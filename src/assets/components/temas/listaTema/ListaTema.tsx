@@ -7,6 +7,7 @@ import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@
 import Tema from "../../../../model/Tema";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { addToken } from "../../../../store/tokens/actions";
+import "./ListaTema.css"
 
 function ListaTema() {
     const [temas, setTemas] = useState<Tema[]>([])
@@ -48,9 +49,9 @@ function ListaTema() {
     return (
       <>
         {temas.map((tema) => (
-          <Box m={2}>
-            <Card variant="outlined">
-              <CardContent>
+          <Box m={2} >
+            <Card  className="cardTemas">
+              <CardContent >
                 <Typography color="textSecondary" gutterBottom>
                   Tema
                 </Typography>

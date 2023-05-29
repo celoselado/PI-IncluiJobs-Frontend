@@ -103,6 +103,7 @@ function CadastroTema() {
             color="textSecondary"
             component="h1"
             align="center"
+            className="cadtemastitulo"
           >
             Cadastro de Temas
           </Typography>
@@ -116,6 +117,7 @@ function CadastroTema() {
             variant="outlined"
             name="descricao"
             margin="normal"
+            className="formTema"
             fullWidth
           ></TextField>
           <TextField
@@ -130,9 +132,11 @@ function CadastroTema() {
             margin="normal"
             fullWidth
           ></TextField>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
-          </Button>
+          <Box display="flex" justifyContent="center">
+            <Button type="submit" variant="contained" color="primary" className="btnTemas">
+              Finalizar
+            </Button>
+          </Box>
         </form>
       </Box>
     </Grid>

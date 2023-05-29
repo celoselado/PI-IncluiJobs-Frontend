@@ -1,5 +1,5 @@
 .corpoTema{
-    background-color: skyblue !important;
+  background: linear-gradient(180deg, #025464c0 8%, #00bbf9be 89%) !important;
   height: 480px ;
   width: 280px;
   border-radius: 15px;
@@ -11,7 +11,24 @@
 
   .centralizar {
     min-height: 100vh;
+    background-image: url("/src/images/backgroundCadTemas.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    }
+
+    .cadtemastitulo{
+
+      color: white !important; 
+      font-weight: bold !important;
+    }
+    
+    .formTema{
+      color: white !important;
+    }
+
+    .btnTemas{
+      display: flex !important;
+      justify-content: center !important;
+      
     }
