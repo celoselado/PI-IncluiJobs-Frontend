@@ -4,6 +4,7 @@ import { Grid, Box, Typography, TextField, Button, Autocomplete } from "@mui/mat
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../../model/Usuario";
 import { cadastroUsuario } from "../../../service/service";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   const navigate = useNavigate();
@@ -41,14 +42,39 @@ function CadastroUsuario() {
     if (usuario.senha == confirmarSenha && usuario.senha.length >= 8) {
       try {
         await cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResp);
-        alert("Usuário cadastrado com sucesso");
+        toast.success('Usuário cadastrado com sucesso!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       } catch (error) {
-        alert("Falha ao cadastrar o usuário, verifique os campos");
+        toast.success('Falha ao cadastrar o usuário, verifique os campos!', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
       }
     } else {
-      alert(
-        "Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente"
-      );
+      toast.error('Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
       setUsuario({ ...usuario, senha: "" });
       setConfirmarSenha("");
     }
