@@ -14,7 +14,7 @@ import Postagem from "../../../../model/Postagem";
 import { busca } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-import "./ListaPostagem.css";
+import "./ListaPostagem.css"
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);

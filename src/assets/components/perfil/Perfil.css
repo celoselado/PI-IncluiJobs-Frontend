@@ -3,8 +3,9 @@
     
 }
 .usuario-perfil-foto:hover {
-    border: 1px inset rgb(255, 94, 0);
+    scale: 1.1;
     cursor: pointer;
+    box-shadow: rgba(255, 0, 0, 0.16) 0px 1px 4px, rgba(255, 0, 0, 0.16) 0px 0px 0px 3px;
 }
 
 .peril-container {
@@ -14,7 +15,9 @@
     max-width: 100%;
 }
 .perfil-postagens {
-    height: 350px;
-    width: 250px;
-    
+    height: 400px;
+    width: 280px;
+}
+.perfil-postagens:hover {
+    scale: 1.1;
 }
