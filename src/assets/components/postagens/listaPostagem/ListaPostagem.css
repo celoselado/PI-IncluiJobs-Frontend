@@ -1,5 +1,3 @@
-
-
 .card {
     position: relative;
     width: 700px;
@@ -13,6 +11,7 @@
     background: #fff;
     padding: 0.8em;
     padding-bottom: 1.4em;
+    flex-direction: row-reverse !important;
   }
   
   /* .card::after {
@@ -43,6 +42,7 @@
 
   .title{
     font:italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   
   .card .price {
@@ -61,7 +61,14 @@
   .text {
     padding: 3px;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-style:oblique
+    font-style:oblique;
+    
+    
+    
+  }
+  .texto{
+    padding: 10px;
+    white-space: pre-wrap;
   }
   
   .image {

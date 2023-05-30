@@ -9,7 +9,6 @@ import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
 import "./ListaPostagem.css"
 
-
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
   let navigate = useNavigate();
@@ -56,10 +55,10 @@ function ListaPostagem() {
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
               </Typography>
-              <Typography variant="h5" component="h2" className="text">
+              <Typography variant="h5" component="h2" className="texto">
                 {post.titulo}
               </Typography>
-              <Typography variant="body2" component="p" className="text">
+              <Typography variant="h5" component="h2" className="text" >
                 {post.descricao}
               </Typography>
               <Typography variant="body2" component="p" className="text">
@@ -68,7 +67,7 @@ function ListaPostagem() {
               <Typography variant="body2" component="p" className="text">
                 {post.privacidade}
               </Typography>
-              <Typography variant="h6" component="p">
+              <Typography variant="h6" component="p" style={{ paddingTop: '50px' }}>
                 <img src={post.anexo}></img>
               </Typography>
               <Typography variant="body2" component="p" className="text">
@@ -92,7 +91,7 @@ function ListaPostagem() {
                   <Box mx={1}>
                     <Button
                       variant="contained"
-                      className="marginLeft"
+                      className="btnAtualizar"
                       size="small"
                       color="primary"
                     >
@@ -105,7 +104,7 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button variant="contained" size="small" color="secondary" className="btnDeletar">
                       Deletar
                     </Button>
                   </Box>
