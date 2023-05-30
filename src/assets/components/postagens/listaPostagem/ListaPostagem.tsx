@@ -59,6 +59,16 @@ function ListaPostagem() {
               <Typography variant="body2" component="p">
                 {post.descricao}
               </Typography>
+              <Typography variant="h6" component="h6">
+                {post.status}
+              </Typography>
+              <Typography variant="h6" component="h6">
+                {post.privacidade}
+              </Typography>
+              <Typography variant="h6" component="p">
+                <img src={post.anexo}></img>
+             
+              </Typography>
               <Typography variant="body2" component="p">
                 {post.tema?.descricao}
               </Typography>

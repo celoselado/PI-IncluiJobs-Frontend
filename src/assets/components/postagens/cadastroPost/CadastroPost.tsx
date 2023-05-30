@@ -164,9 +164,9 @@ function CadastroPost() {
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography
-          variant="h3"
+          variant="h5"
           color="textSecondary"
-          component="h1"
+          component="h5"
           align="center"
         >
           Formulário de cadastro postagem
@@ -177,9 +177,10 @@ function CadastroPost() {
             updatedPostagem(event)
           }
           id="titulo"
-          label="titulo"
+          label="Titulo"
           variant="outlined"
           name="titulo"
+          size="small"
           margin="normal"
           fullWidth
         />
@@ -189,14 +190,54 @@ function CadastroPost() {
             updatedPostagem(event)
           }
           id="descricao"
-          label="descricao"
+          label="Descricao"
           name="descricao"
           variant="outlined"
           margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.status}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="status"
+          label="Status"
+          name="status"
+          variant="outlined"
+          margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.privacidade}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="privacidade"
+          label="Privacidade"
+          name="privacidade"
+          variant="outlined"
+          margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.anexo}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="anexo"
+          label="Anexo"
+          name="anexo"
+          variant="outlined"
+          margin="normal"
+          size="small"
           fullWidth
         />
 
-        <FormControl>
+        <FormControl fullWidth>
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
