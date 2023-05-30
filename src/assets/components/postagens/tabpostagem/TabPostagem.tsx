@@ -19,16 +19,10 @@ function TabPostagem() {
           </Tabs>
         </AppBar>
         <TabPanel value="1">
-          <Box
-          display="flex"
-          flexDirection="column-reverse"
-          alignItems="center"
-          >
-          <Box 
-          
-          >
-            <ListaPostagem />
-          </Box>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Box>
+              <ListaPostagem />
+            </Box>
           </Box>
         </TabPanel>
         <TabPanel value="2">
