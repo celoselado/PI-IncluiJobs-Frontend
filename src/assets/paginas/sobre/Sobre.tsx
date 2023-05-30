@@ -152,10 +152,10 @@ function Sobre() {
               <div className="container">
                 <div className="container-inner">
                   <img className="circle" src="*** imagem de fundo ***" />
-                  <img className="img img3" src="** imagem do perfil **" />
+                  <img className="img img3" src="" />
                 </div>
               </div>
-              <div className="divider"></div>
+              
               <div className="name">Desenvolvedor 6</div>
               <div className="title">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. At

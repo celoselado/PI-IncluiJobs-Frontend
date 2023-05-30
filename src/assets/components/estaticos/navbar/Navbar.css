@@ -21,6 +21,7 @@
 .navbarLinks:hover {
     transition: 1s;
     background-color: gray;
+    scale: 1.06;
 }
 .navbarLinks:not(hover), .logoutLink {
     transition: 1s;

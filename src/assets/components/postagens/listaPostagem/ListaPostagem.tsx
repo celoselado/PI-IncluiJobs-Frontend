@@ -7,12 +7,8 @@ import Postagem from "../../../../model/Postagem";
 import { busca } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-<<<<<<< HEAD
-import "./ListaPostagem.css";
-=======
 import "./ListaPostagem.css"
 
->>>>>>> cda99d5199f7cec290f4023864b9f85e33f3f4f7
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -53,15 +49,10 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => (
-<<<<<<< HEAD
-        <Box m={2}>
-          <Card variant="outlined" className="corzinha">
-=======
         <Box m={2} >
           <Grid className="card title">
             <Grid className="image " >
           <Card variant="outlined" className="image " >
->>>>>>> cda99d5199f7cec290f4023864b9f85e33f3f4f7
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
               </Typography>
