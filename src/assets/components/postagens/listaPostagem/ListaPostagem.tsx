@@ -7,12 +7,7 @@ import Postagem from "../../../../model/Postagem";
 import { busca } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-<<<<<<< HEAD
 import "./ListaPostagem.css";
-=======
-import "./ListaPostagem.css"
-
->>>>>>> cda99d5199f7cec290f4023864b9f85e33f3f4f7
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -53,22 +48,17 @@ function ListaPostagem() {
   return (
     <>
       {posts.map((post) => (
-<<<<<<< HEAD
-        <Box m={2}>
-          <Card variant="outlined" className="corzinha">
-=======
         <Box m={2} >
           <Grid className="card title">
             <Grid className="image " >
           <Card variant="outlined" className="image " >
->>>>>>> cda99d5199f7cec290f4023864b9f85e33f3f4f7
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
               </Typography>
-              <Typography variant="h5" component="h2" className="text">
+              <Typography variant="h5" component="h2" className="texto">
                 {post.titulo}
               </Typography>
-              <Typography variant="body2" component="p" className="text">
+              <Typography variant="h5" component="h2" className="text" >
                 {post.descricao}
               </Typography>
               <Typography variant="body2" component="p" className="text">
@@ -77,7 +67,7 @@ function ListaPostagem() {
               <Typography variant="body2" component="p" className="text">
                 {post.privacidade}
               </Typography>
-              <Typography variant="h6" component="p">
+              <Typography variant="h6" component="p" style={{ paddingTop: '50px' }}>
                 <img src={post.anexo}></img>
               </Typography>
               <Typography variant="body2" component="p" className="text">
@@ -101,7 +91,7 @@ function ListaPostagem() {
                   <Box mx={1}>
                     <Button
                       variant="contained"
-                      className="marginLeft"
+                      className="btnAtualizar"
                       size="small"
                       color="primary"
                     >
@@ -114,7 +104,7 @@ function ListaPostagem() {
                   className="text-decorator-none"
                 >
                   <Box mx={1}>
-                    <Button variant="contained" size="small" color="secondary">
+                    <Button variant="contained" size="small" color="secondary" className="btnDeletar">
                       Deletar
                     </Button>
                   </Box>
