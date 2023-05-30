@@ -14,7 +14,7 @@ import Postagem from "../../../../model/Postagem";
 import { busca } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { toast } from "react-toastify";
-import "./ListaPostagem.css"
+import "./ListaPostagem.css";
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
@@ -55,39 +55,35 @@ function ListaPostagem() {
   return (
     <div className="post">
       {posts.map((post) => (
-        <Box my={2} >
-              <Card variant="outlined" className="card title" >
-                <CardContent>
-                  <Typography color="textSecondary" gutterBottom></Typography>
-                  <Typography variant="h5" component="h2" className="texto">
-                    {post.titulo}
-                  </Typography>
-                  <Typography variant="h5" component="h2" className="text">
-                    {post.descricao}
-                  </Typography>
-                  <Typography variant="body2" component="p" className="text">
-                    {post.status}
-                  </Typography>
-                  <Typography variant="body2" component="p">
-                    {post.privacidade}
-                  </Typography>
-                  <Typography
-                    variant="h6"
-                    component="p"
-                    
-                    className="image "
-                  >
-                    <img src={post.anexo}></img>
-                  </Typography>
-                  <Typography variant="body2" component="p" className="text">
-                    {post.tema?.descricao}
-                  </Typography>
-                  <Typography variant="body2" component="p">
-                    Postado por: {post.usuario?.nome}
-                  </Typography>
-                </CardContent>
-              </Card>
-
+        <Box my={2}>
+          <Grid>
+            <Card variant="outlined" className="card title">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom></Typography>
+                <Typography variant="h5" component="h2" className="texto">
+                  {post.titulo}
+                </Typography>
+                <Typography variant="h5" component="h2" className="text">
+                  {post.descricao}
+                </Typography>
+                <Typography variant="body2" component="p" className="text">
+                  {post.status}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {post.privacidade}
+                </Typography>
+                <Typography variant="h6" component="p" className="image ">
+                  <img src={post.anexo}></img>
+                </Typography>
+                <Typography variant="body2" component="p" className="text">
+                  {post.tema?.descricao}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  Postado por: {post.usuario?.nome}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
           <CardActions>
             <Box display="flex" justifyContent="center" mb={1.5}>
               <Link
