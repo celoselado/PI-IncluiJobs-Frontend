@@ -17,7 +17,6 @@ import {
 import { Grid, Stack } from "@mui/material";
 import "./Perfil.css";
 import Postagem from "../../../model/Postagem";
-import ListaPostagem from "../postagens/listaPostagem/ListaPostagem";
 
 function Perfil() {
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
