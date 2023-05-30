@@ -67,8 +67,8 @@ function ListaTema() {
   }, [])
 
   return (
-    <>
-      <Grid container>
+    <Box className="pagina" height="100vh" >
+      <Grid container >
         {temas.map((tema) => (
           <Box m={1} >
             <Card className="cardTemas" >
@@ -123,7 +123,7 @@ function ListaTema() {
           </Box>
         ))}
       </Grid>
-    </>
+    </Box>
   );
 }
 

@@ -1,25 +1,23 @@
 .corpoTema{
-  background: linear-gradient(180deg, #025464c0 8%, #00bbf9be 89%) !important;
+  background: #f8f1f1d5 !important;
   height: 480px ;
   width: 280px;
   border-radius: 15px;
   padding: 50px;
   font-style: italic;
   align-items: center !important;
-  
   }
 
   .centralizar {
     min-height: 100vh;
-    background-image: url("/src/images/backgroundCadTemas.png");
+    background-image: url("/src/images/backgroundCadTemasPB.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     }
 
     .cadtemastitulo{
-
-      color: white !important; 
+      color: black !important; 
       font-weight: bold !important;
     }
     

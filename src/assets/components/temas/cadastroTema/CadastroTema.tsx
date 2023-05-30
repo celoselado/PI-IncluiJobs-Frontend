@@ -129,7 +129,6 @@ function CadastroTema() {
         <form onSubmit={onSubmit}>
           <Typography
             variant="h3"
-            color="textSecondary"
             component="h1"
             align="center"
             className="cadtemastitulo"
@@ -162,7 +161,7 @@ function CadastroTema() {
             fullWidth
           ></TextField>
           <Box display="flex" justifyContent="center">
-            <Button type="submit" variant="contained" color="primary" className="btnTemas">
+            <Button type="submit" variant="contained" color="primary" className="btnAtualizar" style={{marginTop: "10px"}}>
               Finalizar
             </Button>
           </Box>
