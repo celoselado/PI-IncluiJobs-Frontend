@@ -1,0 +1,20 @@
+.perfil-dados {
+    border-right: 2px solid #f1f1f1;
+    
+}
+.usuario-perfil-foto:hover {
+    border: 1px inset rgb(255, 94, 0);
+    cursor: pointer;
+}
+
+.peril-container {
+    margin-top: 5%;
+}
+.perfil-imgPostagem {
+    max-width: 100%;
+}
+.perfil-postagens {
+    height: 350px;
+    width: 250px;
+    
+}
