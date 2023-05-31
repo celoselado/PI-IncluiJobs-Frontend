@@ -60,7 +60,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Expresse aqui os seus pensamentos e opiniões!
+              Mostre suas habilidades e conquiste oportunidades ou expresse suas experiências e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
