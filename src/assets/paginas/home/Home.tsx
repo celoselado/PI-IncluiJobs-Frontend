@@ -76,7 +76,7 @@ function Home() {
         </Grid>
         <Grid item xs={4}>
           <img
-            src="https://media.discordapp.net/attachments/1080202704405663806/1113179346899832942/WhatsApp_Image_2023-05-30_at_15.56.34-PhotoRoom.png-PhotoRoom.png?width=472&height=472"
+            src="https://cdn.pixabay.com/photo/2019/06/13/09/41/business-4271251_1280.png"
             alt=""
             width="300px"
             height="300px"
