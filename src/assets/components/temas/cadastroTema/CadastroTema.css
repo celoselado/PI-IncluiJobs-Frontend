@@ -1,5 +1,5 @@
 .corpoTema{
-  background: #f8f1f1d5 !important;
+  background: #f8f1f1 !important;
   height: 380px ;
   width: 280px;
   border-radius: 15px;
@@ -10,10 +10,7 @@
 
   .centralizar {
     min-height: 100vh;
-    background-image: url("/src/images/backgroundCadTemasPB.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(180deg,  #000 8%, #F6F1E9 89%)
     }
 
     .cadtemastitulo{

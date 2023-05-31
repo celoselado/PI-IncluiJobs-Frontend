@@ -24,7 +24,7 @@ function Sobre() {
               align="center"
               className="titulo2"
             >
-              Sobre nós:
+              Sobre a Inclui Jobs:
             </Typography>
             <Typography
               variant="h5"
@@ -34,7 +34,7 @@ function Sobre() {
               align="center"
               className="texto2"
             >
-             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam veritatis voluptatum ipsa deserunt cupiditate rerum quasi eum veniam laborum repudiandae tenetur magnam esse consectetur, dolor voluptas quia. Sint, sequi reprehenderit.
+            O objetivo do projeto é criar uma rede social que conecte grupos de pessoas que enfrentam dificuldades para ingressar ou reingressar no mercado de trabalho, como pessoas LGBTQIA+, mulheres, pessoas negras ou pardas, pessoas com deficiência, ex-presidiários, entre outros, com empresas que possuem vagas voltadas para esses grupos. A ideia é criar uma plataforma inclusiva e acessível para que essas pessoas possam encontrar oportunidades e se conectar com outras pessoas em situações similares.
             </Typography>
           </Box>
           </Grid>
@@ -47,11 +47,12 @@ function Sobre() {
           />
         </Grid>
         </Grid>
-        <div className="caixa">
+        <div style={{backgroundColor: "black"}}>
         <br></br>
         <h1>Conheça nossa equipe!</h1>
+        <br />
         </div>
-        <Stack direction={"row"} className="caixa">
+        <Stack direction={"row"} className="equipe">
           <Box marginX={"auto"} >
             <Stack direction={"row"} flexWrap={"wrap"}>
               <div className="person">
@@ -102,7 +103,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img3" src="/src/images/Rebeca.png" />
+                    <img className="img img3" src="/src/images/Raylane.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
@@ -126,12 +127,12 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img4" src="/src/images/vinicius.png" />
+                    <img className="img img4" src="/src/images/Rebeca.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 4</div>
-                <div className="title">
+                <div className="name2">Desenvolvedor 4</div>
+                <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
                   Numquam obcaecati ipsa aspernatur voluptatem velit ut quo.
@@ -147,13 +148,13 @@ function Sobre() {
               <div className="person">
                 <div className="container">
                   <div className="container-inner">
-                    <img className="circle" src="*** imagem de fundo ***" />
-                    <img className="img img3" src="** imagem do perfil **" />
+                    <img className="circle" />
+                    <img className="img img5" src="/src/images/vinicius.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 5</div>
-                <div className="title">
+                <div className="name2">Desenvolvedor 5</div>
+                <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
                   Numquam obcaecati ipsa aspernatur voluptatem velit ut quo.
@@ -174,8 +175,8 @@ function Sobre() {
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 6</div>
-                <div className="title">
+                <div className="name2">Desenvolvedor 6</div>
+                <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
                   Numquam obcaecati ipsa aspernatur voluptatem velit ut quo.

@@ -27,6 +27,7 @@
 
 h1{
     text-align: center;
+    color: white;
 }
 
 .person {
@@ -47,7 +48,7 @@ h1{
 }
 
 .container:after {
-    background-color: #f2f2f2;
+    background-color: transparent;
     content: "";
     height: 10px;
     position: absolute;
@@ -65,6 +66,10 @@ h1{
     position: relative;
     transform-origin: 50%;
     top: -200px;
+}
+
+.equipe{
+    background: linear-gradient(180deg,  #000 8%, #F6F1E9 89%);
 }
 
 .circle {
@@ -94,9 +99,9 @@ h1{
 }
 
 .img1 {
-    left: 22px;
-    top: 164px;
-    width: 340px;
+    left: 48px;
+    top: 120px;
+    width: 400px;
     margin-top: 65px;
 }
 
@@ -108,15 +113,24 @@ h1{
 }
 
 .img3 {
-    left: -56px;
-    top: 144px;
+    left: -80px;
+    top: 90px;
     width: 466px;
     margin-top: 30px;
 }
 
 .img4{
-    left: 30px;
-    top: 80px;
+    left: -80px;
+    top: 150px;
+    width: 466px;
+    margin-top: 30px;
+}
+
+.img5{
+    left: 20px;
+    top: 40px;
+    width: 350px;
+    margin-top: 30px;
 }
 
 .divider {
@@ -126,7 +140,15 @@ h1{
 }
 
 .name {
-    color: #404245;
+    color: #c5c5c5;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 16px;
+    text-align: center;
+}
+
+.name2 {
+    color: #313030;
     font-size: 36px;
     font-weight: 600;
     margin-top: 16px;
@@ -134,10 +156,17 @@ h1{
 }
 
 .title {
-    color: #6e6e6e;
+    color: #faf6f6;
     font-family: arial;
     font-size: 14px;
     font-style: italic;
     margin-top: 4px;
 }
 
+.title2 {
+    color: #131212;
+    font-family: arial;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 4px;
+}
