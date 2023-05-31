@@ -57,7 +57,7 @@ function ModalPostagem() {
         <div>
             <Button
                 variant="contained"
-                className="btnModal"
+                className="btnModal btnAtualizar"
                 onClick={handleOpen}>Nova Postagem</Button>
             <Modal
                 open={open}

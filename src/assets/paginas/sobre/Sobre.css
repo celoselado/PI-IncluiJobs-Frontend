@@ -113,7 +113,7 @@ h1{
 }
 
 .img3 {
-    left: -80px;
+    left: -50px;
     top: 90px;
     width: 466px;
     margin-top: 30px;
@@ -121,14 +121,21 @@ h1{
 
 .img4{
     left: -80px;
-    top: 150px;
+    top: 110px;
     width: 466px;
     margin-top: 30px;
 }
 
 .img5{
+    left: -60px;
+    top: 150px;
+    width: 466px;
+    margin-top: 30px;
+}
+
+.img6{
     left: 20px;
-    top: 40px;
+    top: 70px;
     width: 350px;
     margin-top: 30px;
 }

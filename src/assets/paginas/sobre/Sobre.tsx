@@ -63,7 +63,7 @@ function Sobre() {
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 1</div>
+                <div className="name">Aline Soglia</div>
                 <div className="title">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -85,7 +85,7 @@ function Sobre() {
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 2</div>
+                <div className="name">Erenilda Tavares</div>
                 <div className="title">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -103,11 +103,11 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img3" src="/src/images/Raylane.png" />
+                    <img className="img img3" src="/src/images/Alexandre.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name">Desenvolvedor 3</div>
+                <div className="name">Marcelo Alexandre</div>
                 <div className="title">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -127,11 +127,11 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img4" src="/src/images/Rebeca.png" />
+                    <img className="img img4" src="/src/images/Raylane.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name2">Desenvolvedor 4</div>
+                <div className="name2">Raylane Silva</div>
                 <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -149,11 +149,11 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img5" src="/src/images/vinicius.png" />
+                    <img className="img img5" src="/src/images/Rebeca.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name2">Desenvolvedor 5</div>
+                <div className="name2">Rebeca Leite</div>
                 <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.
@@ -171,11 +171,11 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" src="*** imagem de fundo ***" />
-                    <img className="img img3" src="** imagem do perfil **" />
+                    <img className="img img6" src="/src/images/vinicius.png" />
                   </div>
                 </div>
                 <div className="divider"></div>
-                <div className="name2">Desenvolvedor 6</div>
+                <div className="name2">Vinicius Silva</div>
                 <div className="title2">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. At
                   accusantium officiis quas sunt labore, voluptatum perferendis.

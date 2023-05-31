@@ -18,8 +18,8 @@ function TabPostagem() {
             <Tab label="Sobre-nós" value="2" />
           </Tabs>
         </AppBar>
-        <TabPanel value="1">
-          <Box display="flex" flexDirection="column" alignItems="center">
+        <TabPanel value="1" style={{backgroundColor: "#E8AA42"}}>
+          <Box display="flex" flexDirection="column" alignItems="center" className="post">
             <Box>
               <ListaPostagem />
             </Box>
