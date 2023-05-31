@@ -124,7 +124,7 @@ function CadastroTema() {
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"center"}
-        padding={10}
+        padding={7}
       >
         <form onSubmit={onSubmit}>
           <Typography

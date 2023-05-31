@@ -67,7 +67,7 @@ function ListaTema() {
   }, [])
 
   return (
-    <Box className="pagina">
+    <Box className="pagina" width="100wh" height="100vh">
       <Grid container>
         {temas.map((tema) => (
           <Grid xs={4} style={{marginBottom: "5px"}}>
