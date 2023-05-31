@@ -68,7 +68,7 @@ function Home() {
               <ModalPostagem />
             </Box>
             <Link to="/postagens">
-              <Button variant="outlined" className="postHover botao">
+              <Button variant="outlined" className="postHover botao btnDeletar">
                 Ver Postagens
               </Button>
             </Link>

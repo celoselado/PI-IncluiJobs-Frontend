@@ -46,7 +46,7 @@ function Footer() {
         >
           <Box marginLeft={10}>
             <img
-              src="/src/images/IncluiJobs-logo-.png"
+              src="/src/images/logoIncluiJobs2_1atual.png"
               alt="Logo da IncluiJobs"
               width={200}
             />
