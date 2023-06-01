@@ -96,6 +96,7 @@ function ListaPostagem() {
                     className="btnAtualizar"
                     size="small"
                     color="primary"
+                  
                   >
                     Atualizar
                   </Button>

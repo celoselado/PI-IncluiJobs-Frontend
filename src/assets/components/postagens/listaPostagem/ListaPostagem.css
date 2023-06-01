@@ -53,9 +53,9 @@
   color: #000;
 }
 
-.card:active {
+/* .card:active {
   transform: scale(0.98);
-}
+} */
 
 .text {
   padding: 3px;

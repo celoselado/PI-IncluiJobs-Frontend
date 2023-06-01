@@ -12,7 +12,12 @@
       background-color:rgb(255, 255, 255);
       color: rgb(255, 255, 255) !important;
   }
-  
-    .postagens{
-      background-color: white !important;
+
+    .postagem-normal {
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .postagem-expanded {
+      transform: scale(1.5);
     }
