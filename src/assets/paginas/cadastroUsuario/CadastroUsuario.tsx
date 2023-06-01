@@ -1,10 +1,11 @@
-import React, { useEffect, useState, ChangeEvent } from "react";
+import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
 import "./CadastroUsuario.css";
 import { Grid, Box, Typography, TextField, Button, Autocomplete } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import Usuario from "../../../model/Usuario";
 import { cadastroUsuario } from "../../../service/service";
 import { toast } from "react-toastify";
+
 
 function CadastroUsuario() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ function CadastroUsuario() {
   });
 
   const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [loading, setLoading] = useState(false);
 
   function confirmSenha(event: ChangeEvent<HTMLInputElement>) {
     setConfirmarSenha(event.target.value);
@@ -37,12 +39,13 @@ function CadastroUsuario() {
     });
   }
 
-  async function cadastrar(event: ChangeEvent<HTMLFormElement>) {
+  async function cadastrar(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (usuario.senha == confirmarSenha && usuario.senha.length >= 8) {
+    if (usuario.senha === confirmarSenha && usuario.senha.length >= 8) {
       try {
+        setLoading(true);
         await cadastroUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResp);
-        toast.success('Usuário cadastrado com sucesso!', {
+        toast.success("Usuário cadastrado com sucesso!", {
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: false,
@@ -51,9 +54,9 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
       } catch (error) {
-        toast.success('Falha ao cadastrar o usuário, verifique os campos!', {
+        toast.error("Falha ao cadastrar o usuário, verifique os campos!", {
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: false,
@@ -62,28 +65,35 @@ function CadastroUsuario() {
           draggable: true,
           progress: undefined,
           theme: "colored",
-          });
+        });
+      } finally {
+        setLoading(false);
       }
     } else {
-      toast.error('Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente!', {
-        position: "top-center",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-        });
+      toast.error(
+        "Os campos de Senha e Confirmar Senha estão diferentes! Por favor, tente novamente!",
+        {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
       setUsuario({ ...usuario, senha: "" });
       setConfirmarSenha("");
     }
   }
+
   useEffect(() => {
     if (usuarioResp.id !== 0) {
       navigate("/login");
     }
   }, [usuarioResp]);
+
   return (
     <Grid
       container
@@ -133,7 +143,7 @@ function CadastroUsuario() {
             name="senha"
             label="Senha"
             variant="outlined"
-            type="Password"
+            type="password"
             margin="normal"
             fullWidth
             value={usuario.senha}
@@ -175,8 +185,13 @@ function CadastroUsuario() {
                 Cancelar
               </Button>
             </Link>
-            <Button type="submit" variant="contained" className="BtnCadastrar">
-              Cadastrar
+            <Button
+              type="submit"
+              variant="contained"
+              className="BtnCadastrar"
+              disabled={loading} // Desabilita o botão durante o carregamento
+            >
+              {loading ? "Carregando..." : "Cadastrar"} {/* Renderiza o texto do botão de acordo com o estado de loading */}
             </Button>
           </Box>
         </form>

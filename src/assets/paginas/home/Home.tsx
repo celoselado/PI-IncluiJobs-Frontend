@@ -2,7 +2,7 @@ import { Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
@@ -15,11 +15,17 @@ function Home() {
     (state) => state.tokens
   );
 
+  const [isPostagemExpanded, setPostagemExpanded] = useState(false);
+
+  const handlePostagemClick = () => {
+    setPostagemExpanded(!isPostagemExpanded);
+  };
+
   useEffect(() => {
     if (token == "") {
       toast.error("Você precisa estar logado!", {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -49,6 +55,7 @@ function Home() {
               component="h3"
               align="center"
               className="titulo"
+              style={{ padding: "20px" }}
             >
               Seja bem vindo(a)!
             </Typography>
@@ -59,16 +66,21 @@ function Home() {
               component="h5"
               align="center"
               className="titulo"
+              style={{ padding: "10px" }}
             >
-              Expresse aqui os seus pensamentos e opiniões!
+              Mostre suas habilidades e conquiste oportunidades ou expresse suas
+              experiências e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <Box marginRight={1}>
+            <Box marginRight={1} style={{ paddingBottom: "40px" }}>
               <ModalPostagem />
             </Box>
             <Link to="/postagens">
-              <Button variant="outlined" className="postHover botao btnDeletar">
+              <Button
+                variant="outlined"
+                className="postHover botao btnDeletar "
+              >
                 Ver Postagens
               </Button>
             </Link>
@@ -82,7 +94,14 @@ function Home() {
             height="300px"
           />
         </Grid>
-        <Grid xs={12} className="postagens">
+
+        <Grid
+          xs={12}
+          className={
+            isPostagemExpanded ? "postagem-expanded" : "postagem-normal"
+          }
+          onClick={handlePostagemClick}
+        >
           <TabPostagem />
         </Grid>
       </Grid>

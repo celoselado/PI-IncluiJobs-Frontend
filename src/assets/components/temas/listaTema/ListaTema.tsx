@@ -32,7 +32,7 @@ function ListaTema() {
       if (error.toString().includes('403')) {
         toast.warn('Seu token expirou, logue novamente!', {
           position: "top-center",
-          autoClose: 3000,
+          autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -54,7 +54,7 @@ function ListaTema() {
     if (token === '') {
       toast.error('Você precisa estar logado!', {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 1000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -67,7 +67,7 @@ function ListaTema() {
   }, [])
 
   return (
-    <Box className="pagina" width="100wh" height="100vh">
+    <Box className="pagina" width="100wh" height="100vh" display="flex" justifyContent="center">
       <Grid container>
         {temas.map((tema) => (
           <Grid xs={4} style={{marginBottom: "5px"}}>

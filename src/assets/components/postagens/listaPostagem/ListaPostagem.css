@@ -52,11 +52,6 @@
   bottom: 0.625em;
   color: #000;
 }
-
-.card:active {
-  transform: scale(0.98);
-}
-
 .text {
   padding: 3px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -80,4 +75,5 @@
   flex-direction: column-reverse;
   margin: 0 auto;
   width: 60vw;
+  
 }
