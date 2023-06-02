@@ -3,17 +3,13 @@ import { useNavigate, useParams } from "react-router-dom";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import { ChangeEvent, useEffect, useState } from "react";
 import { buscaId, post, put } from "../../../../service/service";
-import {
-  Button,
-  Container,
-  Grid,
-  TextField,
-  Typography,
+import {Button, Grid, TextField, Typography,
 } from "@material-ui/core";
 import Tema from "../../../../model/Tema";
 import "./CadastroTema.css";
 import { toast } from "react-toastify";
 import {Box} from '@mui/material'
+
 
 function CadastroTema() {
   let navigate = useNavigate();
@@ -26,10 +22,11 @@ function CadastroTema() {
     descricao: "",
     grupo: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (token == "") {
-      toast.error('Você precisa estar logado!', {
+    if (token === "") {
+      toast.error("Você precisa estar logado!", {
         position: "top-center",
         autoClose: 1000,
         hideProgressBar: false,
@@ -38,8 +35,7 @@ function CadastroTema() {
         draggable: true,
         progress: undefined,
         theme: "colored",
-        });
-    navigate("/login")
+      });
       navigate("/login");
     }
   }, [token]);
@@ -51,11 +47,18 @@ function CadastroTema() {
   }, [id]);
 
   async function findById(id: string) {
+    setIsLoading(true);
     buscaId(`/temas/${id}`, setTema, {
       headers: {
         Authorization: token,
       },
-    });
+    })
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+      });
   }
 
   function updatedTema(event: ChangeEvent<HTMLInputElement>) {
@@ -67,6 +70,7 @@ function CadastroTema() {
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+    setIsLoading(true);
     console.log("tema" + JSON.stringify(tema));
 
     if (id !== undefined) {
@@ -75,35 +79,48 @@ function CadastroTema() {
         headers: {
           Authorization: token,
         },
-      });
-      toast.success('Tema atualizado com sucesso!', {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
+      })
+        .then(() => {
+          setIsLoading(false);
+          toast.success("Tema atualizado com sucesso!", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          back();
+        })
+        .catch(() => {
+          setIsLoading(false);
         });
     } else {
       post(`/temas`, tema, setTema, {
         headers: {
           Authorization: token,
         },
-      });
-      toast.success('Tema cadastrado com sucesso!', {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
+      })
+        .then(() => {
+          setIsLoading(false);
+          toast.success("Tema cadastrado com sucesso!", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          });
+          back();
+        })
+        .catch(() => {
+          setIsLoading(false);
         });
     }
-    back();
   }
 
   function back() {
@@ -161,8 +178,15 @@ function CadastroTema() {
             fullWidth
           ></TextField>
           <Box display="flex" justifyContent="center">
-            <Button type="submit" variant="contained" color="primary" className="btnAtualizar" style={{marginTop: "10px"}}>
-              Finalizar
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="btnAtualizar"
+              style={{ marginTop: "10px" }}
+              disabled={isLoading}
+            >
+              {isLoading ? "Carregando..." : "Finalizar"}
             </Button>
           </Box>
         </form>
