@@ -46,7 +46,7 @@ function Footer() {
         >
           <Box marginLeft={10}>
             <img
-              src="/src/images/logoIncluiJobs2_1atual.png"
+              src="https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=687&height=177"
               alt="Logo da IncluiJobs"
               width={200}
             />
@@ -89,7 +89,7 @@ function Footer() {
             <Link href="brasil.generation.org" style={{ color: "#000" }}>
               <img
                 width={150}
-                src="/src/images/generationBrasil-logo.png"
+                src="https://media.discordapp.net/attachments/1094735633810997421/1113989418164953159/image.png?width=419&height=170"
                 alt=""
               />
             </Link>

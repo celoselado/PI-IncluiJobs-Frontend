@@ -149,7 +149,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img5" src="/src/images/Rebeca.png" />
+                    <img className="img img5" src="https://media.discordapp.net/attachments/1094735633810997421/1113463630525112400/share6352647615855199583.png?width=752&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>
@@ -171,7 +171,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" src="*** imagem de fundo ***" />
-                    <img className="img img6" src="/src/images/vinicius.png" />
+                    <img className="img img6" src="https://media.discordapp.net/attachments/1094735633810997421/1113163715425095771/vinicius.png?width=305&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>
