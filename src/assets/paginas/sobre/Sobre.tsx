@@ -40,7 +40,7 @@ function Sobre() {
           </Grid>
         <Grid item xs={6}>
           <img
-            src="/src/images/backgroundCadTemas2.png"
+            src="https://cdn.discordapp.com/attachments/1094735633810997421/1113972270076022844/backgroundCadTemas2.png"
             alt=""
             width="100%"
             height="100%"
@@ -59,7 +59,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img1" src="/src/images/ALINE PERFIL-sem fundo.png" />
+                    <img className="img img1" src="https://media.discordapp.net/attachments/1094735633810997421/1113464364444426290/chrome_image_31_de_mai._de_2023_10_49_29_BRT.png?width=662&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>
@@ -81,7 +81,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img2" src="/src/images/Erenilda.png" />
+                    <img className="img img2" src="https://media.discordapp.net/attachments/1094735633810997421/1113175458046038056/WhatsApp_Image_2023-05-30_at_15.40.54-PhotoRoom.png-PhotoRoom.png?width=489&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>
@@ -103,7 +103,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img3" src="/src/images/Alexandre.png" />
+                    <img className="img img3" src="https://media.discordapp.net/attachments/1094735633810997421/1113488727201812541/chrome_image_31_de_mai._de_2023_12_26_27_BRT.png?width=577&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>
@@ -127,7 +127,7 @@ function Sobre() {
                 <div className="container">
                   <div className="container-inner">
                     <img className="circle" />
-                    <img className="img img4" src="/src/images/Raylane.png" />
+                    <img className="img img4" src="https://media.discordapp.net/attachments/1094735633810997421/1113478374170558484/chrome_image_31_de_mai._de_2023_11_42_23_BRT.png?width=605&height=662" />
                   </div>
                 </div>
                 <div className="divider"></div>

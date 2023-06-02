@@ -169,6 +169,10 @@ function CadastroUsuario() {
             label="Foto"
             variant="outlined"
             margin="normal"
+            value={usuario.foto}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              updateModel(event)
+            }
             fullWidth
           />
           <Box marginTop={2} textAlign="center">

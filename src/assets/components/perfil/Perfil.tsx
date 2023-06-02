@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import Usuario from "../../../model/Usuario";
-import { busca, buscaId } from "../../../service/service";
+import { busca, buscaId, put } from "../../../service/service";
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   Avatar,
   Box,
   Button,
@@ -12,6 +15,7 @@ import {
   CardContent,
   Container,
   Link,
+  TextField,
   Typography,
 } from "@material-ui/core";
 import { Grid, Stack } from "@mui/material";
@@ -53,6 +57,48 @@ function Perfil() {
     getUserById(+userId);
   }, []);
 
+  useEffect(() => {
+    setUsuario({
+      ...usuario,
+      senha: "",
+    });
+  }, [usuario.usuario]);
+
+  const [confirmarSenha, setConfirmarSenha] = useState<string>("");
+
+  function confirmSenha(event: ChangeEvent<HTMLInputElement>) {
+    setConfirmarSenha(event.target.value);
+  }
+
+  function updateModel(event: ChangeEvent<HTMLInputElement>) {
+    setUsuario({
+      ...usuario,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  async function atualizar(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (usuario.senha === confirmarSenha && usuario.senha.length >= 8) {
+      try {
+        await put("/usuarios/atualizar", usuario, setUsuario, {
+          headers: {
+            Authorization: token,
+          },
+        });
+        alert("Usuário cadastrado com sucesso");
+        setUsuario({ ...usuario, senha: "" });
+        setConfirmarSenha("");
+      } catch (error) {
+        alert("Falha ao cadastrar o usuário, verifique os campos");
+      }
+    } else {
+      alert("Os campos de Senha e Confirmar Senha estão diferentes");
+      setUsuario({ ...usuario, senha: "" });
+      setConfirmarSenha("");
+    }
+  }
+
   return (
     <>
       <Container>
@@ -67,7 +113,7 @@ function Perfil() {
                 <Avatar
                   src={usuario.foto}
                   className="usuario-perfil-foto"
-                  alt="Foto de perfil do usuario"
+                  alt={`Foto de perfil de ${usuario.nome}`}
                   style={{
                     width: "15rem",
                     height: "15rem",
@@ -84,6 +130,76 @@ function Perfil() {
                   {usuario.usuario}{" "}
                 </Typography>
               </div>
+              <div className="perfilUpdate">
+                <Accordion>
+                  <AccordionSummary
+                    
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography variant="h5" style={{ margin: "0 auto" }}>
+                      Atualizar Perfil
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <form onSubmit={atualizar}>
+                      <Box
+                        display={"flex"}
+                        width={"100%"}
+                        flexDirection={"column"}
+                        
+                      >
+                        <TextField
+                          name="nome"
+                          label="Nome completo"
+                          value={usuario.nome}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            updateModel(event)
+                          }
+                        />
+                        <TextField
+                          name="usuario"
+                          label="Endereço de e-mail"
+                          disabled
+                          value={usuario.usuario}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            updateModel(event)
+                          }
+                        />
+                        <TextField
+                          name="foto"
+                          label="URL da foto"
+                          value={usuario.foto}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            updateModel(event)
+                          }
+                        />
+                        <TextField
+                          name="senha"
+                          label="Senha"
+                          type="password"
+                          value={usuario.senha}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            updateModel(event)
+                          }
+                        />
+                        <TextField
+                          name="confirmarSenha"
+                          label="Confirmar senha"
+                          type="password"
+                          value={confirmarSenha}
+                          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                            confirmSenha(event)
+                          }
+                        />
+                        <Button fullWidth variant={"contained"} type="submit">
+                          Atualizar
+                        </Button>
+                      </Box>
+                    </form>
+                  </AccordionDetails>
+                </Accordion>
+              </div>
             </Stack>
           </Grid>
 
@@ -91,7 +207,11 @@ function Perfil() {
             <Typography variant="h6" align="center">
               Você tem um total de {usuario.postagem?.length} postagens feitas
             </Typography>
-            <Typography variant="h4" align="center" style={{marginTop: "15px"}}>
+            <Typography
+              variant="h4"
+              align="center"
+              style={{ marginTop: "15px" }}
+            >
               {" "}
               Postagens de {usuario.nome}{" "}
             </Typography>

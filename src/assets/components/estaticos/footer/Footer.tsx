@@ -59,7 +59,7 @@ function Footer() {
           </Box>
           <Box display={"flex"} flexDirection={"column"} gap={2}>
             <Link href="#">Colaboradores</Link>
-            <Link href="#">Empegos</Link>
+            <Link href="#">Empregos</Link>
             <Link href="#">Central de Ajuda</Link>
             <Link href="#">Fale Conosco</Link>
           </Box>
