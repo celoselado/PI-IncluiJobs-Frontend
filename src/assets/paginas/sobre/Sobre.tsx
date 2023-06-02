@@ -150,20 +150,14 @@ function Sobre() {
               <div className="name2">Raylane Silva</div>
               <div className="title2">
                 Sou uma jovem natural do interior de Minas Gerais. Sempre fui
-                curiosa e com interesse em aprender coisas novas. Me destaquei
-                como melhor aluna no colegial e ganhei duas bolsas de estudos.
-                Em 2019, decidi cursar publicidade e propaganda para explorar
-                minha criatividade, mas acabei me interessando pela tecnologia
-                da informação. Meu primeiro contato com a tecnologia foi através
-                da programação, onde em 7 dias aprendi o básico de HTML, CSS e
-                JS. Desde aquele momento tive certeza de qual carreira gostaria
-                de seguir. Deixei a publicidade e comecei a me aprofundar na
-                área da tecnologia. Em alguns meses fui aprovada no bootcamp da
-                Generation Brasil, onde desenvolvi minhas habilidades com a
-                linguagem Java e algumas softSkills, como comunicação, trabalho
-                em equipe e orientação aos detalhes. Hoje sou uma profissional
-                da área de TI, atuando como Desenvolvedora FullStack Junior e
-                estou animada para colocar meus conhecimentos em prática.
+                curiosa e com interesse em aprender coisas novas. Em 2019,
+                decidi cursar publicidade e propaganda para explorar minha
+                criatividade, mas acabei me interessando pela tecnologia da
+                informação. Desde aquele momento tive certeza de qual carreira
+                gostaria de seguir. Hoje sou uma profissional da área de TI,
+                formada pela Generation Brasil, atuando como Desenvolvedora
+                FullStack Junior e estou animada para colocar meus conhecimentos
+                em prática.
               </div>
             </div>
             {/* imagem 5* */}
@@ -171,7 +165,10 @@ function Sobre() {
               <div className="container">
                 <div className="container-inner">
                   <img className="circle" />
-                  <img className="img img5" src="/src/images/Rebeca.png" />
+                  <img
+                    className="img img5"
+                    src="https://media.discordapp.net/attachments/1094735633810997421/1113463630525112400/share6352647615855199583.png?width=536&height=472"
+                  />
                 </div>
               </div>
               <div className="divider"></div>
@@ -192,7 +189,10 @@ function Sobre() {
               <div className="container">
                 <div className="container-inner">
                   <img className="circle" src="*** imagem de fundo ***" />
-                  <img className="img img6" src="/src/images/vinicius.png" />
+                  <img
+                    className="img img6"
+                    src="https://media.discordapp.net/attachments/1094735633810997421/1113163715425095771/vinicius.png?width=217&height=472"
+                  />
                 </div>
               </div>
               <div className="divider"></div>
