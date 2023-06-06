@@ -1,17 +1,19 @@
 import "./Login.css";
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Link, useNavigate } from "react-router-dom";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import UsuarioLogin from "../../../model/UsuarioLogin";
 import { login } from "../../../service/service";
 import { addId, addToken } from "../../../store/tokens/actions";
 import { useDispatch } from "react-redux";
 import { Stack } from "@mui/material";
+import { toast } from "react-toastify";
 
 function Login() {
   let history = useNavigate();
   const dispatch = useDispatch();
   const [token, setToken] = useState("");
+  const [loading, setLoading] = useState(false); // Estado para controlar o loader
 
   const [userLogin, setUserLogin] = useState<UsuarioLogin>({
     id: 0,
@@ -53,14 +55,34 @@ function Login() {
     }
   }, [respUserLogin.token]);
 
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
+      setLoading(true); // Define o estado de loading como true antes de fazer a requisição
       await login(`/usuarios/logar`, userLogin, setRespUserLogin);
-
-      alert("Usuário logado com sucesso!");
+      toast.success("Usuário logado com sucesso!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     } catch (error) {
-      alert("Dados do usuário inconsistentes. Erro ao logar!");
+      toast.error("Usuário e/ou senha inválidos, por favor, tente novamente!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -73,10 +95,9 @@ function Login() {
         alignItems="center"
         className="containerLogin"
       >
-        <Box
+        <Grid
           className="containerLogin-form"
-          display={"flex"}
-          flexDirection={"column"}
+          xs={11} sm={6} md={4} lg={2}
         >
           <form onSubmit={onSubmit}>
             <Typography
@@ -105,6 +126,12 @@ function Login() {
                 variant="outlined"
                 name="senha"
                 type="password"
+                error={userLogin.senha.length < 8 && userLogin.senha.length > 0}
+                helperText={
+                  userLogin.senha.length < 8 && userLogin.senha.length > 0
+                    ? "A senha tem que ter mais de 8 caracteres"
+                    : ""
+                }
                 size="small"
               />
 
@@ -115,7 +142,8 @@ function Login() {
                   className="loginBtn"
                   fullWidth
                 >
-                  Logar
+                  {loading ? "Carregando..." : "Logar"}{" "}
+                  {/* Renderiza o texto do botão de acordo com o estado de loading */}
                 </Button>
               </Box>
             </Stack>
@@ -139,7 +167,7 @@ function Login() {
               </Typography>
             </Link>
           </Box>
-        </Box>
+        </Grid>
       </Grid>
       <Grid item xs={6} className="imagem"></Grid>
     </>

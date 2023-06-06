@@ -1,46 +1,134 @@
-
-.navbarLink{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    
-}
-
-.navbar {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-
-.navbarLinks {
-    border-right: 1px solid lightgray;
-    padding: 0 0.9em;
-}
-
-.navbarContainer {
-    justify-content: center;
-}
-
-.navbarLinks:hover {
-    transition: 1s;
-    background-color: gray;
-}
-.navbarLinks:not(hover), .logoutLink {
-    transition: 1s;
-}
-
-.logoutLink {
-    border: 1px solid lightgray;
-
-}
-
 .navbar {
     background-color: #F6F1E9;
 }
 
-.text-decorator-none{
-    text-decoration: none;
+
+
+@media screen and (min-width: 768px) {
+    .navbarContainer {
+        position: static;
+    }
+
+    .menuHamburguer {
+        display: none;
+    }
+
+    .navbarLink {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+
+    }
+
+    .navbar {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    }
+
+    .navbarLinks {
+        border-right: 1px solid lightgray;
+        padding: 0 0.9em;
+    }
+
+    .navbarContainer {
+        justify-content: center;
+    }
+
+    .navbarLinks:hover {
+        transition: 1s;
+        background-color: gray;
+        scale: 1.06;
+    }
+
+    .navbarLinks:not(hover),
+    .logoutLink {
+        transition: 1s;
+    }
+
+    .logoutLink {
+        border: 1px solid lightgray;
+
+    }
+
+    .text-decorator-none {
+        text-decoration: none;
+    }
+
+    .usuarioPerfil {
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+    }
 }
 
-.usuarioPerfil{
-    border-radius: 100%;
-    width: 50px;
-    height: 50px;
+@media screen and (max-width: 768px) {
+    * {
+        max-width: 768px;
+    }
+
+    .navbarContainer {
+        position: fixed;
+    }
+
+
+
+    .navbarLinks {
+        display: none;
+    }
+
+    .navbarContainer {
+        justify-content: center;
+        background-color: #F6F1E9 !important;
+        margin-top: 0px !important;
+        height: 20vh;
+        max-width: 768px;
+    }
+
+    .navbarContainerGrid {
+        justify-content: space-between !important;
+    }
+
+    menu {
+        display: none;
+
+    }
+
+    menu ul {
+        list-style: none;
+        margin-top: 111vh;
+    }
+
+    menu ul li a {
+        display: block;
+        font-size: 2em;
+        padding: 20px 80px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        background-color: aqua;
+        text-align: center;
+        border-top: 1px solid black;
+
+    }
+
+    .logoutLink2 {
+        display: block;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        background-color: aqua;
+        text-align: center;
+        border-top: 1px solid black;
+    }
+
+    .menuHamburguer {
+        margin: 0px;
+        margin-right: -16px;
+    }
+
+    .menuHamburguerIcon {
+        border: 1px solid lightgray;
+        color: rgb(0, 0, 0);
+        padding: 10px 20px;
+        scale: 1.5;
+    }
+
+    .menuHamburguerItens {}
+
 }

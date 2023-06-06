@@ -24,3 +24,9 @@
       color: #F6F1E9 !important;
     }
   
+    @media screen and (max-width: 375px){
+      .containerCadastro{
+        padding: 2em;
+        border-radius: 0;
+      }
+    }

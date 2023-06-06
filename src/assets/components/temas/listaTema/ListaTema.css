@@ -1,0 +1,71 @@
+.cardTemas {
+  background: #f8f1f1 !important;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.418);
+  padding: 2rem;
+  width: max(20vw, 300px);
+}
+
+.cardTemas2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btnAtualizar {
+    color: #fff !important;
+    border: 1px solid #000 !important;
+    border-radius: 4px !important;
+    padding: 0.8em 2em !important;
+    background: #000 !important;
+    transition: 0.2s !important;
+  }
+  
+  .btnAtualizar:hover {
+    color: #000 !important;
+    transform: translate(-0.25rem,-0.25rem) !important;
+    background: #009077 !important;
+    box-shadow: 0.25rem 0.25rem #000 !important;
+  }
+  
+  .btnAtualizar:active {
+    transform: translate(0) !important;
+    box-shadow: none !important;
+  }
+
+.btnAtualizar:hover {
+  color: #000 !important;
+  transform: translate(-0.25rem, -0.25rem) !important;
+  background: #0e94af !important;
+  box-shadow: 0.25rem 0.25rem #000 !important;
+}
+
+.btnAtualizar:active {
+  transform: translate(0) !important;
+  box-shadow: none !important;
+}
+
+.btnDeletar {
+  color: #000 !important;
+  border: 1px solid #fff !important;
+  border-radius: 4px !important;
+  padding: 0.8em 2em !important;
+  background: #fff !important;
+  transition: 0.2s !important;
+}
+
+.btnDeletar:hover {
+  color: #000 !important;
+  transform: translate(-0.25rem, -0.25rem) !important;
+  background: #f15b5b !important;
+  box-shadow: 0.25rem 0.25rem #000 !important;
+}
+
+.btnDeletar:active {
+  transform: translate(0) !important;
+  box-shadow: none !important;
+}
+
+.pagina {
+  background: linear-gradient(180deg,  #E8AA42 8%, #F8F1F1 89%);
+}

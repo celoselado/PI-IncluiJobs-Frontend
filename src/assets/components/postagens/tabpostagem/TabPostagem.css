@@ -1,0 +1,18 @@
+.postagem {
+  width: 70%;
+}
+
+.titulo {
+  margin-bottom: 16px;
+}
+
+.descricao {
+  margin-bottom: 8px;
+}
+
+.autor {
+  color: #888888;
+}
+.barra{
+  background-color: rgb(0, 0, 0) !important;
+}

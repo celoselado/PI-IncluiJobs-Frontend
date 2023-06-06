@@ -1,0 +1,27 @@
+.perfil-dados {
+    border-right: 2px solid #f1f1f1;
+    
+}
+.usuario-perfil-foto:hover {
+    scale: 1.1;
+    cursor: pointer;
+    box-shadow: rgba(255, 0, 0, 0.16) 0px 1px 4px, rgba(255, 0, 0, 0.16) 0px 0px 0px 3px;
+}
+
+.peril-container {
+    padding-top: 5%;
+}
+.perfil-imgPostagem {
+    max-width: 100%;
+}
+.perfil-postagens {
+    height: 400px;
+    width: 280px;
+}
+.perfil-postagens:hover {
+    scale: 1.1;
+}
+
+.perfilUpdate form {
+    width: 25vw;
+}

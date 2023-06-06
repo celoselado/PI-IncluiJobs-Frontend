@@ -18,6 +18,7 @@ import Tema from "../../../../model/Tema";
 import { busca, buscaId, put, post } from "../../../../service/service";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
 import Usuario from "../../../../model/Usuario";
+import { toast } from "react-toastify";
 
 function CadastroPost() {
   let navigate = useNavigate();
@@ -26,75 +27,118 @@ function CadastroPost() {
 
   const [temas, setTemas] = useState<Tema[]>([]);
 
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<TokenState, TokenState['tokens']>(
     (state) => state.tokens
   );
 
-  const userId = useSelector<TokenState, TokenState["id"]>(
-    (state) => state.id
-  );
+  const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (token == "") {
-      alert("Você precisa estar logado!");
-      navigate("/login");
+    if (token === '') {
+      toast.error('Você precisa estar logado!', {
+        position: 'top-center',
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+      navigate('/login');
     }
-  }, [token]);
+  }, [token, navigate]);
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
-    descricao: "",
-    grupo: "",
+    descricao: '',
+    grupo: '',
   });
 
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
-    titulo: "",
-    descricao: "",
-    status: "",
-    privacidade: "",
-    anexo: "",
+    titulo: '',
+    descricao: '',
+    status: '',
+    privacidade: '',
+    anexo: '',
     tema: null,
     usuario: null,
   });
 
   const [usuario, setUsuario] = useState<Usuario>({
     id: +userId,
-    nome:"",
-    usuario:"",
-    senha:"",
-    foto:""
+    nome: '',
+    usuario: '',
+    senha: '',
+    foto: '',
   });
 
   useEffect(() => {
     setPostagem({
       ...postagem,
       tema: tema,
-      usuario: usuario
+      usuario: usuario,
     });
   }, [tema]);
 
   useEffect(() => {
+    setLoading(true);
     getTemas();
     if (id !== undefined) {
       findByIdPostagem(id);
     }
+    setLoading(false);
   }, [id]);
 
   async function getTemas() {
-    await busca("/temas", setTemas, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    setLoading(true);
+    try {
+      const response = await busca('/temas', setTemas, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast.error('Falha ao buscar os temas!', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+    }
   }
 
   async function findByIdPostagem(id: string) {
-    await buscaId(`postagens/${id}`, setPostagem, {
-      headers: {
-        Authorization: token,
-      },
-    });
+    setLoading(true);
+    try {
+      const response = await buscaId(`postagens/${id}`, setPostagem, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast.error('Falha ao buscar a postagem!', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
+      });
+    }
   }
 
   function updatedPostagem(event: ChangeEvent<HTMLInputElement>) {
@@ -107,38 +151,70 @@ function CadastroPost() {
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("tema" + JSON.stringify(tema));
+    setLoading(true);
 
-    if (id !== undefined) {
-      console.log(tema);
-      put(`/postagens`, postagem, setPostagem, {
-        headers: {
-          Authorization: token,
-        },
+    try {
+      if (id !== undefined) {
+        await put(`/postagens`, postagem, setPostagem, {
+          headers: {
+            Authorization: token,
+          },
+        });
+        toast.success('Postagem atualizada com sucesso!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
+      } else {
+        await post(`/postagens`, postagem, setPostagem, {
+          headers: {
+            Authorization: token,
+          },
+        });
+        toast.success('Postagem cadastrada com sucesso!', {
+          position: 'top-center',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
+      }
+      setLoading(false);
+      back();
+    } catch (error) {
+      setLoading(false);
+      toast.error('Falha ao salvar a postagem, por favor, tente novamente.', {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'colored',
       });
-      alert("Postagem atualizada com sucesso");
-    } else {
-      post(`/postagens`, postagem, setPostagem, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      alert("Postagem cadastrada com sucesso!");
     }
-    back();
   }
 
   function back() {
-    navigate("/postagens");
+    navigate('/postagens');
   }
 
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography
-          variant="h3"
+          variant="h5"
           color="textSecondary"
-          component="h1"
+          component="h5"
           align="center"
         >
           Formulário de cadastro postagem
@@ -149,9 +225,10 @@ function CadastroPost() {
             updatedPostagem(event)
           }
           id="titulo"
-          label="titulo"
+          label="Titulo"
           variant="outlined"
           name="titulo"
+          size="small"
           margin="normal"
           fullWidth
         />
@@ -161,15 +238,55 @@ function CadastroPost() {
             updatedPostagem(event)
           }
           id="descricao"
-          label="descricao"
+          label="Descricao"
           name="descricao"
           variant="outlined"
           margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.status}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="status"
+          label="Status"
+          name="status"
+          variant="outlined"
+          margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.privacidade}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="privacidade"
+          label="Privacidade"
+          name="privacidade"
+          variant="outlined"
+          margin="normal"
+          size="small"
+          fullWidth
+        />
+        <TextField
+          value={postagem.anexo}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            updatedPostagem(event)
+          }
+          id="anexo"
+          label="Anexo"
+          name="anexo"
+          variant="outlined"
+          margin="normal"
+          size="small"
           fullWidth
         />
 
-        <FormControl>
-          <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
@@ -182,16 +299,24 @@ function CadastroPost() {
             }
           >
             {temas.map((tema) => (
-              <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
+              <MenuItem key={tema.id} value={tema.id}>
+                {tema.descricao} - {tema.grupo}
+              </MenuItem>
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            disabled={loading}
+          >
+            {loading ? 'Carregando' : 'Finalizar'}
           </Button>
         </FormControl>
       </form>
     </Container>
   );
 }
+
 export default CadastroPost;

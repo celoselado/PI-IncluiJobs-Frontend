@@ -600,7 +600,7 @@
 
 "@material-ui/types@^6.0.1":
   version "6.0.2"
-  resolved "https://registry.yarnpkg.com/@material-ui/types/-/types-6.0.2.tgz#a6d384196c6e2e130eb2765b62d944c0b1ea1015"
+  resolved "https://registry.npmjs.org/@material-ui/types/-/types-6.0.2.tgz"
   integrity sha512-/XUca4wUb9pWimLLdM1PE8KS8rTbDEGohSGkGtk3WST7lm23m+8RYv9uOmrvOg/VSsl4bMiOv4t2/LCb+RLbTg==
 
 "@material-ui/utils@^4.11.2", "@material-ui/utils@^4.11.3":
@@ -732,7 +732,7 @@
 
 "@types/hoist-non-react-statics@^3.3.0":
   version "3.3.1"
-  resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
+  resolved "https://registry.npmjs.org/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz"
   integrity sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==
   dependencies:
     "@types/react" "*"
@@ -769,7 +769,7 @@
 
 "@types/react-redux@^7.1.16":
   version "7.1.25"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.1.25.tgz#de841631205b24f9dfb4967dd4a7901e048f9a88"
+  resolved "https://registry.npmjs.org/@types/react-redux/-/react-redux-7.1.25.tgz"
   integrity sha512-bAGh4e+w5D8dajd6InASVIyCo4pZLJ66oLb80F9OBLO1gKESbZcRCJpTT6uLXX+HAB57zw1WTdwJdAsewuTweg==
   dependencies:
     "@types/hoist-non-react-statics" "^3.3.0"
@@ -795,7 +795,7 @@
 
 "@types/redux@3.6.0":
   version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@types/redux/-/redux-3.6.0.tgz#f1ebe1e5411518072e4fdfca5c76e16e74c1399a"
+  resolved "https://registry.npmjs.org/@types/redux/-/redux-3.6.0.tgz"
   integrity sha512-ic+60DXHW5seNyqFvfr7Sk5cnXs+HsF9tIeIaxjOuSP5kzgDXC+AzKTYmjAfuLx4Sccm/0vjwBQj3OOkUkwOqg==
   dependencies:
     redux "*"
@@ -955,7 +955,7 @@ array-union@^2.1.0:
 
 axios@0.21.4:
   version "0.21.4"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
+  resolved "https://registry.npmjs.org/axios/-/axios-0.21.4.tgz"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
   dependencies:
     follow-redirects "^1.14.0"
@@ -1028,7 +1028,7 @@ chalk@^4.0.0:
 
 classnames@^2.2.6:
   version "2.3.2"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.3.2.tgz"
   integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
 
 clsx@^1.0.4, clsx@^1.1.1, clsx@^1.2.1:
@@ -1387,7 +1387,7 @@ flatted@^3.1.0:
 
 follow-redirects@^1.14.0:
   version "1.15.2"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.2.tgz#b460864144ba63f2681096f274c4e57026da2c13"
+  resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz"
   integrity sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==
 
 fs.realpath@^1.0.0:
@@ -1729,7 +1729,7 @@ lru-cache@^6.0.0:
 
 material-ui-popup-state@^1.9.3:
   version "1.9.3"
-  resolved "https://registry.yarnpkg.com/material-ui-popup-state/-/material-ui-popup-state-1.9.3.tgz#133ee02be8adf936e738d6b5f3dc89726af39bce"
+  resolved "https://registry.npmjs.org/material-ui-popup-state/-/material-ui-popup-state-1.9.3.tgz"
   integrity sha512-+Ete5Tzw5rXlYfmqptOS8kBUH8vnK5OJsd6IQ7SHtLjU0PsvsmM73M/k8ot0xkX4RmPGuNRsFbK3mlCe/ClQuw==
   dependencies:
     "@babel/runtime" "^7.12.5"
@@ -1936,7 +1936,7 @@ react-is@^18.2.0:
 
 react-redux@7.2.5:
   version "7.2.5"
-  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-7.2.5.tgz#213c1b05aa1187d9c940ddfc0b29450957f6a3b8"
+  resolved "https://registry.npmjs.org/react-redux/-/react-redux-7.2.5.tgz"
   integrity sha512-Dt29bNyBsbQaysp6s/dN0gUodcq+dVKKER8Qv82UrpeygwYeX1raTtil7O/fftw/rFqzaf6gJhDZRkkZnn6bjg==
   dependencies:
     "@babel/runtime" "^7.12.1"
@@ -1966,6 +1966,13 @@ react-router@6.11.1:
   dependencies:
     "@remix-run/router" "1.6.1"
 
+react-toastify@^9.1.3:
+  version "9.1.3"
+  resolved "https://registry.npmjs.org/react-toastify/-/react-toastify-9.1.3.tgz"
+  integrity sha512-fPfb8ghtn/XMxw3LkxQBk3IyagNpF/LIKjOBflbexr2AWxAH1MJgvnESwEwBn9liLFXgTKWgBSdZpw9m4OTHTg==
+  dependencies:
+    clsx "^1.1.1"
+
 react-transition-group@^4.4.0, react-transition-group@^4.4.2:
   version "4.4.5"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -1978,7 +1985,7 @@ react-transition-group@^4.4.0, react-transition-group@^4.4.2:
 
 react-use-localstorage@3.5.3:
   version "3.5.3"
-  resolved "https://registry.yarnpkg.com/react-use-localstorage/-/react-use-localstorage-3.5.3.tgz#c4bcc097859a2d2879e969f0a57b16345905df82"
+  resolved "https://registry.npmjs.org/react-use-localstorage/-/react-use-localstorage-3.5.3.tgz"
   integrity sha512-1oNvJmo72G4v5P9ytJZZTb6ywD3UzWBiainTtfbNlb+U08hc+SOD5HqgiLTKUF0MxGcIR9JSnZGmBttNLXaQYA==
 
 react@^17:
@@ -1991,7 +1998,7 @@ react@^17:
 
 redux@*, redux@^4.0.0:
   version "4.2.1"
-  resolved "https://registry.yarnpkg.com/redux/-/redux-4.2.1.tgz#c08f4306826c49b5e9dc901dee0452ea8fce6197"
+  resolved "https://registry.npmjs.org/redux/-/redux-4.2.1.tgz"
   integrity sha512-LAUYz4lc+Do8/g7aeRa8JkyDErK6ekstQaqWQrNRW//MY1TvCEpMtpTWvlQ+FPbWCx+Xixu/6SHt5N0HR+SB4w==
   dependencies:
     "@babel/runtime" "^7.9.2"
