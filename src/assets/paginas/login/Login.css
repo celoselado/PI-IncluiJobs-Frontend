@@ -10,12 +10,27 @@
   background-color: #F6F1E9;
   border-radius: 15px;
   align-items: center;
-  scale: 1.0;
   padding: 3em;
+  height: 45vh;
 }
 
 .loginBtn {
   background-color: #009077 !important;
   color: #F6F1E9 !important;
+  margin-top: 1em !important;
+}
+
+
+@media screen and (max-width: 375px){
+  .containerLogin-form{
+    padding: 2em;
+    height: 100vh;
+    border-radius: 0px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+
+
 }
 

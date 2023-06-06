@@ -102,10 +102,11 @@ function CadastroUsuario() {
       justifyContent="center"
       className="imgCadastro"
     >
-      <Box
+      <Grid
         className="containerCadastro"
         display={"flex"}
         flexDirection={"column"}
+        xs={12}
       >
         <form onSubmit={cadastrar}>
           <Typography
@@ -195,7 +196,7 @@ function CadastroUsuario() {
             </Button>
           </Box>
         </form>
-      </Box>
+      </Grid>
     </Grid>
   );
 }

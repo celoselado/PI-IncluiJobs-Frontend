@@ -95,10 +95,9 @@ function Login() {
         alignItems="center"
         className="containerLogin"
       >
-        <Box
+        <Grid
           className="containerLogin-form"
-          display={"flex"}
-          flexDirection={"column"}
+          xs={11} sm={6} md={4} lg={2}
         >
           <form onSubmit={onSubmit}>
             <Typography
@@ -168,7 +167,7 @@ function Login() {
               </Typography>
             </Link>
           </Box>
-        </Box>
+        </Grid>
       </Grid>
       <Grid item xs={6} className="imagem"></Grid>
     </>
