@@ -45,8 +45,9 @@ function Home() {
         justifyContent="center"
         alignItems="center"
         className="caixa"
+        xs={12}
       >
-        <Grid alignItems="center" item xs={6}>
+        <Grid alignItems="center" item xs={12}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -87,9 +88,9 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={4}>
-          <img
+          <img className="imagemHome"
             src="https://cdn.pixabay.com/photo/2019/06/13/09/41/business-4271251_1280.png"
-            alt=""
+            alt="Imagem de uma mão segurando uma lampada"
             width="300px"
             height="300px"
           />

@@ -59,55 +59,113 @@ function Navbar(): JSX.Element {
             className="navbarContainerGrid"
             alignItems="center"
             justifyContent="center"
-            xs={12}
             direction="row"
           >
-            <Grid item xs={5}>
+            <Grid item xs={5} md={5}>
               <Box style={{ cursor: "pointer" }}>
                 <img
                   className="IJlogo"
                   src="https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=449&height=116"
                   alt="Logo da IncluiJobs"
-                  width={300}
                 />
               </Box>
             </Grid>
-            <div onClick={clickMenu} className="menuHamburguerContainer">
-              <Box className="menuHamburguer">
-                <MenuIcon className="menuHamburguerIcon" />
-                <menu className="menuHamburguerItens">
-                  <ul>
-                    <li>
-                      <a href="/home">Home</a>
-                    </li>
-                    <li>
-                      <a href="/postagens">Postagens</a>
-                    </li>
-                    <li>
-                      <a href="/temas">Temas</a>
-                    </li>
-                    <li>
-                      <a href="/cadastrarTemas">Cadastrar Tema</a>
-                    </li>
-                    <li>
-                      <a href="/sobre">Sobre</a>
-                    </li>
-                    <li>
-                      <a href="/perfil">Meu Perfil</a>
-                    </li>
-                    <li>
-                      <Link
-                        to={"/login"}
-                        onClick={goLogout}
-                        className="logoutLink2"
-                      ></Link>
-                      Sair
-                    </li>
-                  </ul>
-                </menu>
-              </Box>
-            </div>
-            <Grid item xs={7}>
+
+            <Grid item xs={2} md={7} className="menuHamburguerContainer">
+              <PopupState variant="popover" popupId="demo-popup-menu">
+                {(popupState) => (
+                  <div className="menuHamburguer">
+                    <React.Fragment>
+                      <Button {...bindTrigger(popupState)}>
+                        <MenuIcon />
+                      </Button>
+                      <Popover
+                        {...bindPopover(popupState)}
+                        anchorOrigin={{
+                          vertical: "bottom",
+                          horizontal: "center",
+                        }}
+                        transformOrigin={{
+                          vertical: "top",
+                          horizontal: "center",
+                        }}
+                      >
+                        <Box className="navbarLinkBox">
+                          <Link
+                            className="navbarLink"
+                            to={"/home"}
+                            style={{
+                              textDecoration: "none",
+                              color: "#000000",
+                            }}
+                          >
+                            <MenuItem onClick={popupState.close}>Home</MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link className="navbarLink" to={"/postagens"}>
+                            <MenuItem onClick={popupState.close}>
+                              Postagens
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link className="navbarLink" to={"/temas"}>
+                            <MenuItem onClick={popupState.close}>
+                              Temas
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link className="navbarLink" to={"/cadastrarTemas"}>
+                            <MenuItem onClick={popupState.close}>
+                              Cad. Tema
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link className="navbarLink" to={"/sobre"}>
+                            <MenuItem onClick={popupState.close}>
+                              Sobre
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link
+                            className="navbarLink"
+                            to={"/perfil"}
+                            style={{
+                              textDecoration: "none",
+                              color: "#000000",
+                            }}
+                          >
+                            <MenuItem onClick={popupState.close}>
+                              Perfil
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                        <Box className="navbarLinkBox">
+                          <Link
+                            className="navbarLink"
+                            to={"/login"}
+                            onClick={goLogout}
+                          >
+                            <MenuItem
+                              className="logoutLink navbarLinks"
+                              onClick={popupState.close}
+                            >
+                              Sair
+                            </MenuItem>
+                          </Link>
+                        </Box>
+                      </Popover>
+                    </React.Fragment>
+                  </div>
+                )}
+              </PopupState>
+            </Grid>
+
+            <Grid item xs={7} className="navbarLinksContainer">
               <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
                 <Box className="navbarLinks">
                   <Typography variant="h6" color="inherit">
@@ -202,14 +260,5 @@ function Navbar(): JSX.Element {
 }
 
 export default Navbar;
-function clickMenu(event: React.MouseEvent<HTMLDivElement>): void {
-  const menuHamburguerItens = document.querySelector(
-    ".menuHamburguerItens"
-  ) as HTMLElement;
-  if (menuHamburguerItens.style.display === "block") {
-    menuHamburguerItens.style.display = "none";
-  } else {
-    menuHamburguerItens.style.display = 'block'
-  }
-}
+
 
