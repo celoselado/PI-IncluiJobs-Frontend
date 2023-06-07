@@ -46,9 +46,10 @@ function Home() {
         alignItems="center"
         className="caixa"
         xs={12}
+        
       >
-        <Grid alignItems="center" item xs={12}>
-          <Box paddingX={20}>
+        <Grid alignItems="center" item xs={12} md={6} className="homeContainer">
+          <Box paddingX={5}>
             <Typography
               variant="h3"
               gutterBottom
@@ -88,7 +89,8 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={4}>
-          <img className="imagemHome"
+          <img
+            className="imagemHome"
             src="https://cdn.pixabay.com/photo/2019/06/13/09/41/business-4271251_1280.png"
             alt="Imagem de uma mão segurando uma lampada"
             width="300px"

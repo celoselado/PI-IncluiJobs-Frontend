@@ -72,7 +72,12 @@ function ListaPostagem() {
   return (
     <div className="post">
       {loading ? (
-        <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+        <Box
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          height="100vh"
+        >
           Carregando...
         </Box>
       ) : (
@@ -82,20 +87,32 @@ function ListaPostagem() {
               <Card variant="outlined" className="card title">
                 <CardContent>
                   <Typography color="textSecondary" gutterBottom></Typography>
-                  <Typography variant="h5" component="h2" className="texto">
+                  <Typography
+                    variant="h4"
+                    component="h2"
+                    className="cardTitulo"
+                  >
                     {post.titulo}
                   </Typography>
-                  <Typography variant="h5" component="h2" className="text">
+                  <Typography
+                    variant="body1"
+                    component="h2"
+                    className="cardDescricao"
+                  >
                     {post.descricao}
                   </Typography>
-                  <Typography variant="body2" component="p" className="text">
+                  <Typography
+                    variant="body2"
+                    component="p"
+                    className="cardStatus"
+                  >
                     {post.status}
                   </Typography>
                   <Typography variant="body2" component="p">
                     {post.privacidade}
                   </Typography>
-                  <Typography variant="h6" component="p" className="image ">
-                    <img src={post.anexo} alt="Anexo" />
+                  <Typography variant="h6" component="p" className="cardAnexo">
+                    <img src={post.anexo} alt="Anexo" className="cardImagem" />
                   </Typography>
                   <Typography variant="body2" component="p" className="text">
                     {post.tema?.descricao}

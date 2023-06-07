@@ -52,7 +52,7 @@ function Navbar(): JSX.Element {
 
   if (token !== "") {
     navbarComponent = (
-      <AppBar className="navbarContainer">
+      <AppBar className="navbarContainer" >
         <Toolbar className="navbar">
           <Grid
             container
