@@ -14,8 +14,8 @@ function Sobre() {
         alignItems="center"
         className="caixaSobre"
       >
-        <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
+        <Grid alignItems="center" item xs={12} md={6}>
+          <Box paddingX={20} className="sobreTextoContainer">
             <Typography
               variant="h3"
               gutterBottom
@@ -38,7 +38,7 @@ function Sobre() {
             </Typography>
           </Box>
           </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} className="imgSobreIJ">
           <img
             src="/src/images/backgroundCadTemas2.png"
             alt=""

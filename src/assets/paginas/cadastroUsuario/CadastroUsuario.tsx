@@ -106,7 +106,7 @@ function CadastroUsuario() {
         className="containerCadastro"
         display={"flex"}
         flexDirection={"column"}
-        xs={12}
+        xs={12} md={4}
       >
         <form onSubmit={cadastrar}>
           <Typography

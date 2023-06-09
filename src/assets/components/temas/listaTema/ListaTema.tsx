@@ -67,10 +67,10 @@ function ListaTema() {
   }, [])
 
   return (
-    <Box className="pagina" width="100wh" height="100vh" display="flex" justifyContent="center">
+    <Box className="pagina" width="100vw" height="100vh" display="flex" justifyContent="center">
       <Grid container>
         {temas.map((tema) => (
-          <Grid xs={4} style={{marginBottom: "5px"}}>
+          <Grid xs={12} md={4} style={{marginBottom: "5px"}}>
             <Box m={1}>
               <Card className="cardTemas">
                 <CardContent className="cardTemas2">

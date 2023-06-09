@@ -1,9 +1,13 @@
+@media screen and (min-width: 768px) {
+  
+
 .cardTemas {
   background: #f8f1f1 !important;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.418);
   padding: 2rem;
   width: max(20vw, 300px);
+
 }
 
 .cardTemas2 {
@@ -68,4 +72,16 @@
 
 .pagina {
   background: linear-gradient(180deg,  #E8AA42 8%, #F8F1F1 89%);
+}
+}
+
+@media screen and (max-width: 768px) {
+  .pagina {
+    height: 100% !important;
+  }
+
+  .cardTemas {
+    margin-top: 100px;
+    max-height: 100vh;
+  }
 }

@@ -97,7 +97,7 @@ function Login() {
       >
         <Grid
           className="containerLogin-form"
-          xs={11} sm={6} md={4} lg={2}
+          xs={11} sm={6} md={4} lg={3}
         >
           <form onSubmit={onSubmit}>
             <Typography

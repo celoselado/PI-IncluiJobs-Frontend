@@ -88,6 +88,7 @@
   .post {
     max-width: 90vw;
     height: 50%;
+    margin-top: 80px;
   }
     .cardImagem {
       max-height: 50vh !important;
