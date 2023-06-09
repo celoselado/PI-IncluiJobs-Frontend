@@ -25,3 +25,23 @@
 .perfilUpdate form {
     width: 25vw;
 }
+
+@media screen and (max-width: 768px) {
+    .peril-container {
+        margin-top: 80px;
+    }
+
+    .perfil-dados {
+            border: none;
+            border-bottom: 1px solid #f1f1f1;
+            
+        }
+        .formAtualizarPerfil{
+            padding-left: 75px !important;
+            padding-right: 75px !important;
+        }
+
+        .formAtualizar {
+            width: 100% !important;
+        }
+}
