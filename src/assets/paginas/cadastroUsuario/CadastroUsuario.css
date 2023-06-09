@@ -24,9 +24,16 @@
       color: #F6F1E9 !important;
     }
   
-    @media screen and (max-width: 375px){
+    @media screen and (max-width: 768px){
       .containerCadastro{
         padding: 2em;
         border-radius: 0;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .containerLogin-form {
+        padding-bottom: 8em;
+        margin-top: 15px;
       }
     }

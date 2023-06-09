@@ -15,7 +15,7 @@ function Sobre() {
         className="caixaSobre"
       >
         <Grid alignItems="center" item xs={12} md={6}>
-          <Box paddingX={20} className="sobreTextoContainer">
+          <Box paddingX={10} className="sobreTextoContainer">
             <Typography
               variant="h3"
               gutterBottom
@@ -27,7 +27,7 @@ function Sobre() {
               Sobre a Inclui Jobs:
             </Typography>
             <Typography
-              variant="h5"
+              variant="h6"
               gutterBottom
               color="textPrimary"
               component="h5"
