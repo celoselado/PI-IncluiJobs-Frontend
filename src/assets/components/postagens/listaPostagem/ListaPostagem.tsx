@@ -23,6 +23,7 @@ function ListaPostagem() {
     (state) => state.tokens
   );
 
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     if (token == "") {
       toast.error("Você precisa estar logado!", {
