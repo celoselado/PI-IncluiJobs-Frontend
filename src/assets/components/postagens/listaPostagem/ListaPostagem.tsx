@@ -23,10 +23,8 @@ function ListaPostagem() {
     (state) => state.tokens
   );
 
-  const [loading, setLoading] = useState(false);
-
   useEffect(() => {
-    if (token === "") {
+    if (token == "") {
       toast.error("Você precisa estar logado!", {
         position: "top-center",
         autoClose: 1000,
@@ -38,31 +36,16 @@ function ListaPostagem() {
         theme: "colored",
       });
       navigate("/login");
+      navigate("/login");
     }
-  }, [token, navigate]);
+  }, [token]);
 
   async function getPost() {
-    setLoading(true);
-    try {
-      const response = await busca("/postagens", setPosts, {
-        headers: {
-          Authorization: token,
-        },
-      });
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      toast.error("Falha ao buscar as postagens!", {
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    }
+    await busca("/postagens", setPosts, {
+      headers: {
+        Authorization: token,
+      },
+    });
   }
 
   useEffect(() => {

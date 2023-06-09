@@ -2,7 +2,7 @@ import { Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
@@ -15,17 +15,11 @@ function Home() {
     (state) => state.tokens
   );
 
-  const [isPostagemExpanded, setPostagemExpanded] = useState(false);
-
-  const handlePostagemClick = () => {
-    setPostagemExpanded(!isPostagemExpanded);
-  };
-
   useEffect(() => {
     if (token == "") {
       toast.error("Você precisa estar logado!", {
         position: "top-center",
-        autoClose: 1000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -70,19 +64,15 @@ function Home() {
               className="titulo"
               style={{ padding: "10px" }}
             >
-              Mostre suas habilidades e conquiste oportunidades ou expresse suas
-              experiências e opiniões!
+              Mostre suas habilidades e conquiste oportunidades ou expresse suas experiências e opiniões!
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1} style={{ paddingBottom: "40px" }}>
+          <Box display="flex" justifyContent="center"  style={{ paddingBottom: "40px" }}>
+            <Box marginRight={1}>
               <ModalPostagem />
             </Box>
             <Link to="/postagens">
-              <Button
-                variant="outlined"
-                className="postHover botao btnDeletar "
-              >
+              <Button variant="outlined" className="postHover botao btnDeletar">
                 Ver Postagens
               </Button>
             </Link>
@@ -97,14 +87,7 @@ function Home() {
             height="300px"
           />
         </Grid>
-
-        <Grid
-          xs={12}
-          className={
-            isPostagemExpanded ? "postagem-expanded" : "postagem-normal"
-          }
-          onClick={handlePostagemClick}
-        >
+        <Grid xs={12} className="postagens">
           <TabPostagem />
         </Grid>
       </Grid>
