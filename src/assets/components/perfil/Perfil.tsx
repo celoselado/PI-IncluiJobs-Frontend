@@ -102,7 +102,7 @@ function Perfil() {
   return (
     <>
       <Container>
-        <Grid container className="peril-container" paddingY={5}>
+        <Grid container className="peril-container" paddingY={5} paddingTop="100px">
           <Grid item xs={12} md={6} className="perfil-dados">
             <Stack
               display={"flex"}
