@@ -1,6 +1,6 @@
 .scrollTopBtn {
     position: fixed !important;
-    margin-top: 550px !important;
+    margin-top: 650px !important;
     background: none;
     border: none;
 
@@ -8,6 +8,7 @@
 
 .scrollTopImg {
     max-width: 35%;
+    opacity: 0.5;
 }
 
 .scrollTopImg:hover {
