@@ -22,23 +22,4 @@ body::-webkit-scrollbar-thumb {
     /* creates padding around scroll thumb */
 }
 
-.scrollTopBtn {
-    position: fixed !important;
-    margin-top: 550px !important;
-    background: none;
-    border: none;
-    
-}
 
-.scrollTopImg {
-        max-width: 35%;
-}
-.scrollTopImg:hover {
-    transition: 0.5s;
-    scale: 1.1;
-}
-
-.scrollTopImg:not(:hover) {
-    transition: 0.5s;
-    scale: 1.0;
-}

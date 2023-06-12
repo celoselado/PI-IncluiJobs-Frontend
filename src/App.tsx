@@ -19,6 +19,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { scrollTop } from "./assets/components/estaticos/scrollTop/ScrollTop";
 import { Button } from "@material-ui/core";
+import "./assets/components/estaticos/scrollTop/ScrollTop.css"
 
 function App() {
   return (
