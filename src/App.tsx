@@ -17,6 +17,9 @@ import store from "./store/store";
 import Perfil from "./assets/components/perfil/Perfil";
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { scrollTop } from "./assets/components/estaticos/scrollTop/ScrollTop";
+import { Button } from "@material-ui/core";
+import "./assets/components/estaticos/scrollTop/ScrollTop.css"
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Navbar />
+        <button onClick={scrollTop} className="scrollTopBtn">
+          <img src="/src/images/scrollTop.png" className="scrollTopImg" />
+        </button>
         <div style={{ minHeight: "100vh", background: "#E8AA42" }}>
           <Routes>
             {" "}
@@ -41,7 +47,6 @@ function App() {
             <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
             <Route path="/deletarTema/:id" element={<DeletarTema />} />
             <Route path="/perfil" element={<Perfil />} />
-
           </Routes>
         </div>
         <Footer />

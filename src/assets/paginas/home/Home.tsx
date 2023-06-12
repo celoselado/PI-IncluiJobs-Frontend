@@ -8,6 +8,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import { toast } from "react-toastify";
+import { scrollTop } from "../../components/estaticos/scrollTop/ScrollTop";
 
 function Home() {
   let navigate = useNavigate();
@@ -40,10 +41,10 @@ function Home() {
         alignItems="center"
         className="caixa"
         xs={12}
-        
       >
         <Grid alignItems="center" item xs={12} md={6} className="homeContainer">
           <Box paddingX={5}>
+            
             <Typography
               variant="h3"
               gutterBottom
@@ -64,10 +65,15 @@ function Home() {
               className="titulo"
               style={{ padding: "10px" }}
             >
-              Mostre suas habilidades e conquiste oportunidades ou expresse suas experiências e opiniões!
+              Mostre suas habilidades e conquiste oportunidades ou expresse suas
+              experiências e opiniões!
             </Typography>
           </Box>
-          <Box display="flex" justifyContent="center"  style={{ paddingBottom: "40px" }}>
+          <Box
+            display="flex"
+            justifyContent="center"
+            style={{ paddingBottom: "40px" }}
+          >
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
