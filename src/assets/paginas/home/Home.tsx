@@ -78,13 +78,14 @@ function Home() {
             </Link>
           </Box>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} className="imagemContainer">
           <img
             className="imagemHome"
             src="https://cdn.pixabay.com/photo/2019/06/13/09/41/business-4271251_1280.png"
             alt="Imagem de uma mão segurando uma lampada"
             width="300px"
             height="300px"
+            
           />
         </Grid>
         <Grid xs={12} className="postagens">
