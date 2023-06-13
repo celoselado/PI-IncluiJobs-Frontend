@@ -48,7 +48,7 @@ function ListaTema() {
 
   useEffect(() => {
     getTemas()
-  }, [])
+  }, [temas.length])
 
   useEffect(() => {
     if (token === '') {
