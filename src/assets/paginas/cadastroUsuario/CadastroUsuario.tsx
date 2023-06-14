@@ -148,6 +148,12 @@ function CadastroUsuario() {
             margin="normal"
             fullWidth
             value={usuario.senha}
+            error={usuario.senha.length < 8}
+                helperText={
+                  usuario.senha.length < 8
+                    ? "A senha tem que ter no minímo 8 caracteres"
+                    : ""
+                }
             onChange={(event: ChangeEvent<HTMLInputElement>) =>
               updateModel(event)
             }

@@ -237,6 +237,12 @@ function CadastroPost() {
           onChange={(event: ChangeEvent<HTMLInputElement>) =>
             updatedPostagem(event)
           }
+          error={postagem.descricao.length > 255}
+          helperText={
+            postagem.descricao.length > 255
+              ? "A postagem deve conter no maximo 255 caracteres"
+              : ""
+          }
           id="descricao"
           label="Descricao"
           name="descricao"

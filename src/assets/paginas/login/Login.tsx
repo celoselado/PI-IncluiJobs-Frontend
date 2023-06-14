@@ -112,6 +112,12 @@ function Login() {
               <TextField
                 value={userLogin.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                error={userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1}
+                helperText={
+                  userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1
+                    ? "Este campo deve ser preenchido com o seu email"
+                    : ""
+                }
                 id="usuario"
                 label="Usuário"
                 variant="outlined"
