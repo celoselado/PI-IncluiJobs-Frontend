@@ -8,7 +8,7 @@ import { addId, addToken } from "../../../store/tokens/actions";
 import { useDispatch } from "react-redux";
 import { Stack } from "@mui/material";
 import { toast } from "react-toastify";
-
+var tentouLogar;
 function Login() {
   let history = useNavigate();
   const dispatch = useDispatch();
@@ -82,6 +82,7 @@ function Login() {
         theme: "colored",
       });
     } finally {
+      tentouLogar = true;
       setLoading(false);
     }
   }
@@ -112,11 +113,11 @@ function Login() {
               <TextField
                 value={userLogin.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                error={userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1}
+                error={tentouLogar && (userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1)}
                 helperText={
-                  userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1
+                  tentouLogar && (userLogin.usuario.indexOf("@") == -1 || userLogin.usuario.indexOf(".") == -1)
                     ? "Este campo deve ser preenchido com o seu email"
-                    : ""
+                    : tentouLogar = false && ""
                 }
                 id="usuario"
                 label="Usuário"

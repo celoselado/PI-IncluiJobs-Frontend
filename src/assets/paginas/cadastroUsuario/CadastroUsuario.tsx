@@ -148,9 +148,9 @@ function CadastroUsuario() {
             margin="normal"
             fullWidth
             value={usuario.senha}
-            error={usuario.senha.length < 8}
+            error={usuario.senha.length < 8 && usuario.senha.length > 0}
                 helperText={
-                  usuario.senha.length < 8
+                  usuario.senha.length < 8 && usuario.senha.length > 0
                     ? "A senha tem que ter no minímo 8 caracteres"
                     : ""
                 }
