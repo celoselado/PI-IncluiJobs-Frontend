@@ -1,88 +1,186 @@
 @media screen and (min-width: 768px) {
   .card {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      transition: all 120ms;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: floralwhite;
-      padding: 0.8em;
-      padding-bottom: 1.4em;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all 120ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: floralwhite;
+    padding: 0.8em;
+    padding-bottom: 1.4em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .card::after {
+    padding-top: 1.25em;
+    padding-left: 1.25em;
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    background: #00ac7c;
+    color: #fff;
+    width: 700px;
+    height: 400px;
+    transition: all 80ms;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+
+  .card .title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 1.875em;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .title {
+    font: italic;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  .card .price {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 0.9em;
+    position: absolute;
+    left: 0.625em;
+    bottom: 0.625em;
+    color: #000;
+  }
+
+  .cardDescricao,
+  .cardStatus {
+    padding: 3px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-style: oblique;
+  }
+
+  .cardTitulo {
+    padding: 10px;
+  }
+
+  .cardAnexo {
+    background: white;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    width: 60vw;
+  }
+  .imgComents {
+    border-radius: 90%;
+    margin-right: 20px;
+  }
+
+  .box-Coments {
+    margin-top: 10px;
+    padding: 2px;
+    border-radius: 7px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: floralwhite;
+    padding: 0.8em;
+    padding-bottom: 1.4em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .pd-Coments {
+    padding-bottom: 25px;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+  }
+  .bg-Coments {
+    margin: 10px;
+    background-color: rgba(128, 128, 128, 0.113);
+    border-radius: 10px;
+  }
+  .pd-User {
+    padding-top: 12px;
+  }
+  .pd-Texto {
+    padding: 15px;
+  }
+  .input {
+    border-radius: 25px;
+    width: 440%;
+    height: 40px;
+    padding: 6px;
+    border: 1px;
+    display: flex;
+    
+  }
+
+  .button-coments {
+    font-family: inherit;
+    font-size: 15px;
+    background: royalblue;
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+
+  }
+  
+  .button-coments span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button-coments svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .button-coments:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  .button-coments:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  .button-coments:hover span {
+    transform: translateX(5em);
+  }
+  
+  .button-coments:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
     }
   
-    .card::after {
-      padding-top: 1.25em;
-      padding-left: 1.25em;
-      position: absolute;
-      left: 0;
-      bottom: -60px;
-      background: #00AC7C;
-      color: #fff;
-      width: 700px;
-      height: 400px;
-      transition: all 80ms;
-      font-weight: 600;
-      text-transform: uppercase;
-      opacity: 0;
+    to {
+      transform: translateY(-0.1em);
     }
-  
-    .card .title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.9em;
-      position: absolute;
-      left: 0.625em;
-      bottom: 1.875em;
-      font-weight: 400;
-      color: #000;
-    }
-  
-    .title {
-      font: italic;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    }
-  
-    .card .price {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: 0.9em;
-      position: absolute;
-      left: 0.625em;
-      bottom: 0.625em;
-      color: #000;
-    }
-  
-    .cardDescricao, .cardStatus {
-      padding: 3px;
-      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-      font-style: oblique;
-    }
-  
-    .cardTitulo {
-      padding: 10px;
-    }
-  
-    .cardAnexo {
-      background: white;
-      width: 100%;
-      height: 100%;
-      display: grid;
-      place-items: center;
-    }
-  
-    .post {
-      display: flex;
-      flex-direction: column-reverse;
-      margin: 0 auto;
-      width: 60vw;
-  
-    }
+  }
+
 }
-
-
 
 @media screen and (max-width: 768px) {
   .post {
@@ -90,9 +188,9 @@
     height: 50%;
     margin-top: 80px;
   }
-    .cardImagem {
-      max-height: 50vh !important;
-      margin: auto 15vw;
-      border: 1px solid #000;
-    }
+  .cardImagem {
+    max-height: 50vh !important;
+    margin: auto 15vw;
+    border: 1px solid #000;
+  }
 }
