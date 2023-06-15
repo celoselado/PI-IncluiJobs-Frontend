@@ -9,7 +9,7 @@
 }
 
 .peril-container {
-    padding-top: 5%;
+    padding-top: 15vh !important;
 }
 .perfil-imgPostagem {
     max-width: 100%;
@@ -23,7 +23,7 @@
 }
 
 .perfilUpdate form {
-    width: 25vw;
+    width: 35vw;
 }
 
 @media screen and (max-width: 768px) {

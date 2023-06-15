@@ -106,7 +106,6 @@ function Perfil() {
           container
           className="peril-container"
           paddingY={5}
-          style={{ marginTop: "05vh" }}
         >
           <Grid item xs={6} className="perfil-dados">
             <Stack
