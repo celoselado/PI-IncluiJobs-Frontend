@@ -1,12 +1,19 @@
 @media screen and (min-width: 768px) {
-  
+body {
+  overflow-x: hidden;
+} 
+.pagina {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
 
 .cardTemas {
   background: #f8f1f1 !important;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.418);
   padding: 2rem;
-  width: max(20vw, 300px);
+  
 
 }
 
