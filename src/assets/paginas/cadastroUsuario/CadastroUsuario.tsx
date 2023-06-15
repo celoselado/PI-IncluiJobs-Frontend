@@ -56,7 +56,7 @@ function CadastroUsuario() {
           theme: "colored",
         });
       } catch (error) {
-        toast.error("Falha ao cadastrar o usuário, verifique os campos!", {
+        toast.error("Falha ao cadastrar o usuário, informe nome completo e um e-mail válido!", {
           position: "top-center",
           autoClose: 2000,
           hideProgressBar: false,
@@ -173,7 +173,7 @@ function CadastroUsuario() {
           />
           <TextField
             name="foto"
-            label="Foto"
+            label="URL da foto"
             variant="outlined"
             margin="normal"
             value={usuario.foto}

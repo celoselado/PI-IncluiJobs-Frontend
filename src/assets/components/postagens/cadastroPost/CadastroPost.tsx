@@ -244,7 +244,7 @@ function CadastroPost() {
               : ""
           }
           id="descricao"
-          label="Descricao"
+          label="Descrição"
           name="descricao"
           variant="outlined"
           margin="normal"
@@ -283,7 +283,7 @@ function CadastroPost() {
             updatedPostagem(event)
           }
           id="anexo"
-          label="Anexo"
+          label="URL do anexo"
           name="anexo"
           variant="outlined"
           margin="normal"
