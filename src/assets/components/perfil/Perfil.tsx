@@ -102,7 +102,12 @@ function Perfil() {
   return (
     <>
       <Container>
-        <Grid container className="peril-container" paddingY={5} style={{marginTop: "05vh"}}>
+        <Grid
+          container
+          className="peril-container"
+          paddingY={5}
+          style={{ marginTop: "05vh" }}
+        >
           <Grid item xs={6} className="perfil-dados">
             <Stack
               display={"flex"}
@@ -133,7 +138,6 @@ function Perfil() {
               <div className="perfilUpdate">
                 <Accordion>
                   <AccordionSummary
-                    
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
@@ -147,7 +151,6 @@ function Perfil() {
                         display={"flex"}
                         width={"100%"}
                         flexDirection={"column"}
-                        
                       >
                         <TextField
                           name="nome"
@@ -255,39 +258,40 @@ function Perfil() {
                         Postado por: {usuario.nome}
                       </Typography>
                     </CardContent>
-                    <Box display="flex" justifyContent="center" mb={1.5}>
-            <Link
-              to={`/cadastrarPostagem/${post.id}`}
-              className="text-decorator-none"
-            >
-              <Box mx={1}>
-                <Button
-                  variant="contained"
-                  className="btnAtualizar"
-                  size="small"
-                  color="primary"
-                >
-                  Atualizar
-                </Button>
-              </Box>
-            </Link>
-            <Link
-              to={`/deletarPostagem/${post.id}`}
-              className="text-decorator-none"
-            >
-              <Box mx={1}>
-                <Button
-                  variant="contained"
-                  size="small"
-                  color="secondary"
-                  className="btnDeletar"
-                >
-                  Deletar
-                </Button>
-              </Box>
-            </Link>
-          </Box>
+                    <Box display="flex" justifyContent="center" mb={1.5}></Box>
                   </Card>
+                  <Box display={"flex"} marginTop={3}>
+                    <Link
+                      to={`/cadastrarPostagem/${post.id}`}
+                      className="text-decorator-none"
+                    >
+                      <Box mx={1} >
+                        <Button
+                          variant="contained"
+                          className="btnAtualizar"
+                          size="small"
+                          color="primary"
+                        >
+                          Atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link
+                      to={`/deletarPostagem/${post.id}`}
+                      className="text-decorator-none"
+                    >
+                      <Box mx={1}>
+                        <Button
+                          variant="contained"
+                          size="small"
+                          color="secondary"
+                          className="btnDeletar"
+                        >
+                          Deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                  </Box>
                 </Box>
               ))}
             </Stack>
