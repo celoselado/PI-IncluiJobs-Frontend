@@ -67,64 +67,68 @@ function ListaTema() {
   }, [])
 
   return (
-    <Box className="pagina" width="100vw" height="100vh" display="flex" justifyContent="center">
-      <Grid container>
-        {temas.map((tema) => (
-          <Grid xs={12} md={4} style={{marginBottom: "5px"}}>
-            <Box m={1}>
-              <Card className="cardTemas">
-                <CardContent className="cardTemas2">
-                  <Typography color="textSecondary" variant="h4" gutterBottom>
-                    Tema
-                  </Typography>
-                  <Typography variant="h4" component="h2">
-                    {tema.descricao}
-                  </Typography>
-                  <Typography color="textSecondary" variant="h4" gutterBottom>
-                    Grupo
-                  </Typography>
-                  <Typography variant="h4" component="h2">
-                    {tema.grupo}
-                  </Typography>
-                </CardContent>
-                <CardActions className="cardTemas2">
-                  <Box display="flex" justifyContent="center" mb={1.5}>
-                    <Link
-                      to={`/cadastrarTemas/${tema.id}`}
-                      className="text-decorator-none"
-                    >
-                      <Box mx={1}>
-                        <Button
-                          variant="contained"
-                          className="marginLeft btnAtualizar"
-                          size="small"
-                        >
-                          atualizar
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Link
-                      to={`/deletarTema/${tema.id}`}
-                      className="text-decorator-none"
-                    >
-                      <Box mx={1}>
-                        <Button
-                          variant="contained"
-                          size="small"
-                          className="btnDeletar"
-                        >
-                          deletar
-                        </Button>
-                      </Box>
-                    </Link>
-                  </Box>
-                </CardActions>
-              </Card>
-            </Box>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <Grid
+      container
+      className="pagina"
+      spacing={1}
+      style={{ paddingTop: "10vw" }}
+      alignItems="stretch"
+    >
+      {temas.map((tema) => (
+        <Grid item xs={12} md={4} style={{ maxHeight: "100vh", marginBottom: "10vh" }}>
+          <Box>
+            <Card className="cardTemas" style={{ height: "100%" }}>
+              <CardContent className="cardTemas2">
+                <Typography color="textSecondary" variant="h4" gutterBottom>
+                  Tema
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.descricao}
+                </Typography>
+                <Typography color="textSecondary" variant="h4" gutterBottom>
+                  Grupo
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {tema.grupo}
+                </Typography>
+              </CardContent>
+              <CardActions className="cardTemas2">
+                <Box display="flex" justifyContent="center" mb={1.5}>
+                  <Link
+                    to={`/cadastrarTemas/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="marginLeft btnAtualizar"
+                        size="small"
+                      >
+                        atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link
+                    to={`/deletarTema/${tema.id}`}
+                    className="text-decorator-none"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        size="small"
+                        className="btnDeletar"
+                      >
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
+                </Box>
+              </CardActions>
+            </Card>
+          </Box>
+        </Grid>
+      ))}
+    </Grid>
   );
 }
 
