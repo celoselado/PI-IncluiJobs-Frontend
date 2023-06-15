@@ -24,6 +24,7 @@
 
 .caixaSobre{
     background: linear-gradient(180deg,  #E8AA42 8%, #F8F1F1 89%);
+    padding-top: 5vh;
 }
 
 .texto2{

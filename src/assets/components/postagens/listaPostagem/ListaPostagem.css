@@ -77,9 +77,9 @@
   .post {
     display: flex;
     flex-direction: column-reverse;
-    margin: 0 auto;
+    margin: auto;
     width: 60vw;
-
+    padding-top: 10vh;
   }
   .imgComents {
     border-radius: 90%;
