@@ -156,7 +156,7 @@ function ListaPostagem() {
   return (
     <div className="post">
       {posts.map((post) => (
-        <Box my={2}>
+        <Box my={2} style={{marginTop: "10vh"}}>
           <Grid>
             <Card variant="outlined" className="card title">
               <CardContent>
@@ -254,38 +254,7 @@ function ListaPostagem() {
               {/* aqui fica os botoes de atualizar e deletar caso precise colocar de novo */}
             </CardActions>
           </Box>
-          <Box display="flex" justifyContent="center" mb={1.5}>
-            <Link
-              to={`/cadastrarPostagem/${post.id}`}
-              className="text-decorator-none"
-            >
-              <Box mx={1}>
-                <Button
-                  variant="contained"
-                  className="btnAtualizar"
-                  size="small"
-                  color="primary"
-                >
-                  Atualizar
-                </Button>
-              </Box>
-            </Link>
-            <Link
-              to={`/deletarPostagem/${post.id}`}
-              className="text-decorator-none"
-            >
-              <Box mx={1}>
-                <Button
-                  variant="contained"
-                  size="small"
-                  color="secondary"
-                  className="btnDeletar"
-                >
-                  Deletar
-                </Button>
-              </Box>
-            </Link>
-          </Box>
+          
         </Box>
       ))}
     </div>

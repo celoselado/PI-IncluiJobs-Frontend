@@ -79,6 +79,7 @@
     flex-direction: column-reverse;
     margin: 0 auto;
     width: 60vw;
+
   }
   .imgComents {
     border-radius: 90%;
@@ -180,6 +181,11 @@
     }
   }
 
+}
+
+.image{
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
