@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const api= axios.create({
-    baseURL: "https://incluijobss.onrender.com"
-})
+export const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL
+});
 
 export const cadastroUsuario = async(url: any,dados: any,setDado: any) => { 
     const resposta = await api.post(url,dados)
