@@ -2,13 +2,13 @@ import { Grid, Typography, Button } from "@material-ui/core";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
 import TabPostagem from "../../components/postagens/tabpostagem/TabPostagem";
 import { toast } from "react-toastify";
-import { scrollTop } from "../../components/estaticos/scrollTop/ScrollTop";
+import ScrollTop from "../../components/estaticos/scrollTop/ScrollTop";
 
 function Home() {
   let navigate = useNavigate();
@@ -32,6 +32,7 @@ function Home() {
     }
   }, [token]);
 
+
   return (
     <>
       <Grid
@@ -44,7 +45,6 @@ function Home() {
       >
         <Grid alignItems="center" item xs={12} md={6} className="homeContainer">
           <Box paddingX={5}>
-            
             <Typography
               variant="h3"
               gutterBottom
@@ -91,7 +91,6 @@ function Home() {
             alt="Imagem de uma mão segurando uma lampada"
             width="300px"
             height="300px"
-            
           />
         </Grid>
         <Grid xs={12} className="postagens">

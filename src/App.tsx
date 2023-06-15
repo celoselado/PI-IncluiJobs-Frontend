@@ -17,9 +17,8 @@ import store from "./store/store";
 import Perfil from "./assets/components/perfil/Perfil";
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { scrollTop } from "./assets/components/estaticos/scrollTop/ScrollTop";
 import { Button } from "@material-ui/core";
-import "./assets/components/estaticos/scrollTop/ScrollTop.css"
+import ScrollTop from "./assets/components/estaticos/scrollTop/ScrollTop";
 
 function App() {
   return (
@@ -27,9 +26,7 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Navbar />
-        <button onClick={scrollTop} className="scrollTopBtn">
-          <img src="https://cdn.discordapp.com/attachments/1094735633810997421/1117925062385876992/image.png" className="scrollTopImg" />
-        </button>
+        <ScrollTop/>
         <div style={{ minHeight: "100vh", background: "#E8AA42" }}>
           <Routes>
             {" "}
