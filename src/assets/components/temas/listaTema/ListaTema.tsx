@@ -76,19 +76,19 @@ function ListaTema() {
     >
       {temas.map((tema) => (
         <Grid item xs={12} md={4} style={{ maxHeight: "100vh", marginBottom: "10vh" }}>
-          <Box>
+          <Box className="cardTemasContainer">
             <Card className="cardTemas" style={{ height: "100%" }}>
               <CardContent className="cardTemas2">
-                <Typography color="textSecondary" variant="h4" gutterBottom>
+                <Typography color="textSecondary" variant="h4">
                   Tema
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h6" component="h6" gutterBottom>
                   {tema.descricao}
                 </Typography>
-                <Typography color="textSecondary" variant="h4" gutterBottom>
+                <Typography color="textSecondary" variant="h4">
                   Grupo
                 </Typography>
-                <Typography variant="h5" component="h2">
+                <Typography variant="h6" component="h6">
                   {tema.grupo}
                 </Typography>
               </CardContent>
