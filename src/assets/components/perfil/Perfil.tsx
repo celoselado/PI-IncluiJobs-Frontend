@@ -14,13 +14,13 @@ import {
   CardActions,
   CardContent,
   Container,
-  Link,
   TextField,
   Typography,
 } from "@material-ui/core";
 import { Grid, Stack } from "@mui/material";
 import "./Perfil.css";
 import Postagem from "../../../model/Postagem";
+import { Link } from "react-router-dom";
 
 function Perfil() {
   const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
@@ -102,8 +102,8 @@ function Perfil() {
   return (
     <>
       <Container>
-        <Grid container className="peril-container" paddingY={5} paddingTop="100px">
-          <Grid item xs={12} md={6} className="perfil-dados">
+        <Grid container className="peril-container" paddingY={5}>
+          <Grid item xs={6} className="perfil-dados">
             <Stack
               display={"flex"}
               alignItems={"center"}
@@ -133,7 +133,7 @@ function Perfil() {
               <div className="perfilUpdate">
                 <Accordion>
                   <AccordionSummary
-                    className="formAtualizarPerfil"
+                    
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
@@ -142,11 +142,12 @@ function Perfil() {
                     </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <form onSubmit={atualizar} className="formAtualizar">
+                    <form onSubmit={atualizar}>
                       <Box
                         display={"flex"}
                         width={"100%"}
                         flexDirection={"column"}
+                        
                       >
                         <TextField
                           name="nome"
@@ -202,7 +203,7 @@ function Perfil() {
             </Stack>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={6}>
             <Typography variant="h6" align="center">
               Você tem um total de {usuario.postagem?.length} postagens feitas
             </Typography>
@@ -254,6 +255,8 @@ function Perfil() {
                         Postado por: {usuario.nome}
                       </Typography>
                     </CardContent>
+                    
+            
                   </Card>
                 </Box>
               ))}
