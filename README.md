@@ -1,1 +1,77 @@
-# PI-IncluiJobs-Frontend
+
+![Logo](https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=449&height=116)
+
+
+# Projeto Integrador Desenvolvedor Fullstack Java - Generation Brasil (Frontend)
+
+# Descrição
+
+O objetivo do projeto é criar uma rede social que conecte grupos de pessoas que enfrentam dificuldades para ingressar ou reingressar no mercado de trabalho, como pessoas LGBTQIA+, mulheres, pessoas negras ou pardas, pessoas com deficiência, ex-presidiários, entre outros, com empresas que possuem vagas voltadas para esses grupos. A ideia é criar uma plataforma inclusiva e acessível para que essas pessoas possam encontrar oportunidades e se conectar com outras pessoas em situações similares.
+
+
+## Desenvolvedores
+
+- [@AlineSoglia](https://github.com/alinesoglia)
+- [@ErenildaTavares](https://github.com/ErenildaTavares)
+- [@MarceloAlexandre](https://github.com/celoselado)
+- [@RaylaneCosta](https://github.com/yarsico)
+- [@RebecaLPereira](https://github.com/RebecaLPereira)
+- [@ViniciusSilva](https://github.com/VinnyPC)
+
+## Como utilizar IncluiJobs
+
+### Cadastro
+Caso, você não tenha uma conta, é preciso efetuar o cadastro. Deixamos o formulário o mais simples possível para que possa ser utilizado sem problemas.
+
+Nota: Sua foto de perfil precisa ser o link de alguma imagem.
+![Cadastro](https://i.postimg.cc/yN3dN0Bx/image.png)
+
+### Login
+
+Para efetuar o login, basta preencher o campo "Usuario" com seu email, preencher o campo "Senha" e clicar em "Logar".
+
+![Login](https://i.postimg.cc/MpdRB7hY/image.png)
+
+### Pagina inicial
+
+Essa será a primeira página que você verá ao logar no site. Todas as partes do sites podem ser acessadas através da barra de navegação na parte superior.
+
+No cabeçalho da página existe dois botões: "Nova postagem" e "Ver postagens".
+
+Logo abaixo existe uma barra, onde você poderá alternar entre visualizar as postagens ou os temas já cadastrados.
+
+![Home](https://i.postimg.cc/B6Nd9wyK/image.png)
+
+### Criando uma nova postagem
+
+Ao clicar no botão "Nova postagem", abrirá um popup com um formulário para o cadastro de uma nova postagem e assim como no cadastro, o anexo precisará ser um link. Abaixo existe um campo que você poderá selecionar entre os temas já existentes.
+
+![CadastrarPostagem](https://i.postimg.cc/nLGWBPnP/image.png)
+
+### Pagina postagens
+
+Essa página mostra apenas as postagens de todos os usuários e seus comentários.
+
+![Postagens](https://i.postimg.cc/QxFvwmqF/image.png)
+
+### Lista de temas
+
+Essa página mostra todos os temas já cadastrados por outros usuários. Você pode atualizar ou deleta-los se quiser.
+
+![Temas](https://i.postimg.cc/0jFX9gCb/image.pngg)
+
+### Cadastrar temas
+
+Essa página é exclusiva para criar temas. Para criar, basta preencher o campo "Descrição" com o nome do tema que preferir, e "Grupo" com o grupo que você preferir.
+
+![CadastrarTema](https://i.postimg.cc/sgFH8rXL/image.png)
+
+### Perfil do Usuário
+
+Essa página contém a foto, informações do usuário e todas as postagens que foram feitas. Clicando em "Atualizar Perfil", você tem acesso a suas informações e pode alterar algumas como o link da foto de perfil e o nome apenas confirmando a senha.
+
+![Perfil](https://i.postimg.cc/hjtWZBjm/image.png)
+
+
+
+
