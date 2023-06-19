@@ -112,16 +112,19 @@ function Perfil() {
         });
       }
     } else {
-      toast.error("Os campos de Senha e Atualizar Senha estão diferentes, tente novamente!", {
-        position: "top-center",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
+      toast.error(
+        "Os campos de Senha e Atualizar Senha estão diferentes, tente novamente!",
+        {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
       setUsuario({ ...usuario, senha: "" });
       setConfirmarSenha("");
     }
@@ -130,11 +133,7 @@ function Perfil() {
   return (
     <>
       <Container>
-        <Grid
-          container
-          className="peril-container"
-          paddingY={5}
-        >
+        <Grid container className="peril-container" paddingY={5}>
           <Grid item xs={6} className="perfil-dados">
             <Stack
               display={"flex"}
@@ -292,7 +291,7 @@ function Perfil() {
                       to={`/cadastrarPostagem/${post.id}`}
                       className="text-decorator-none"
                     >
-                      <Box mx={1} >
+                      <Box mx={1}>
                         <Button
                           variant="contained"
                           className="btnAtualizar"

@@ -1,29 +1,28 @@
-.corpoTema{
+.corpoTema {
   background: #f8f1f1 !important;
-  height: 380px ;
+  height: 380px;
   width: 280px;
   border-radius: 15px;
   padding: 50px;
   font-style: italic;
   align-items: center !important;
-  }
+}
 
-  .centralizar {
-    min-height: 100vh;
-    background: linear-gradient(180deg,  #000 8%, #F6F1E9 89%)
-    }
+.centralizar {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #000 8%, #f6f1e9 89%);
+}
 
-    .cadtemastitulo{
-      color: black !important; 
-      font-weight: bold !important;
-    }
-    
-    .formTema{
-      color: white !important;
-    }
+.cadtemastitulo {
+  color: black !important;
+  font-weight: bold !important;
+}
 
-    .btnTemas{
-      display: flex !important;
-      justify-content: center !important;
-      
-    }
+.formTema {
+  color: white !important;
+}
+
+.btnTemas {
+  display: flex !important;
+  justify-content: center !important;
+}

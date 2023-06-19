@@ -20,13 +20,18 @@ function TabPostagem() {
           </Tabs>
         </AppBar>
         <TabPanel value="1" style={{ backgroundColor: "#E8AA42" }}>
-          <Box display="flex" flexDirection="column" alignItems="center" className="post">
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            className="post"
+          >
             <Box>
               <ListaPostagem />
             </Box>
           </Box>
         </TabPanel>
-        <TabPanel value="2" style={{ backgroundColor: "#E8AA42"}}>
+        <TabPanel value="2" style={{ backgroundColor: "#E8AA42" }}>
           <Box>
             <Box display="flex" flexDirection="column" alignItems="center">
               <ListaTema />

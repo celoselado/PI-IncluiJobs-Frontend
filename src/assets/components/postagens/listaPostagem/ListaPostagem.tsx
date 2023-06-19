@@ -23,6 +23,7 @@ import Usuario from "../../../../model/Usuario";
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([]);
   const [postagem, setPostagem] = useState<Postagem>({} as Postagem);
+  const param = window.location.href;
   let navigate = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -158,7 +159,10 @@ function ListaPostagem() {
   return (
     <div className="post">
       {posts.map((post) => (
-        <Box my={2} style={{marginTop: "10vh"}}>
+        <Box
+          my={2}
+          style={param.includes("postagens") ? { marginTop: "100px" } : {}}
+        >
           <Grid>
             <Card variant="outlined" className="card title">
               <CardContent>
@@ -186,85 +190,85 @@ function ListaPostagem() {
                   Postado por: {post.usuario?.nome}
                 </Typography>
               </CardContent>
-            
-          
-          {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
-          <Box className="box-Coments">
-            <div>
-            <Accordion>
-            <AccordionSummary
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-              <Typography className="pd-Coments">Ver Comentários
-              </Typography>
-              </AccordionSummary>
+              {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
+              <Box className="box-Coments">
+                <div>
+                  <Accordion>
+                    <AccordionSummary
+                      aria-controls="panel1a-content"
+                      id="panel1a-header"
+                    >
+                      <Typography className="pd-Coments">
+                        Ver Comentários
+                      </Typography>
+                    </AccordionSummary>
 
-              {comments
-                .filter((comentario) => comentario.postagem.id === post.id)
-                .map((comentario) => (
-                  <div className="bg-Coments">
-                    <div className="pd-Coments">
-                      <img
-                        src={comentario.usuario.foto}
-                        alt="foto de quem comentou"
-                        width={50}
-                        className="imgComents"
-                        height={50}
+                    {comments
+                      .filter(
+                        (comentario) => comentario.postagem.id === post.id
+                      )
+                      .map((comentario) => (
+                        <div className="bg-Coments">
+                          <div className="pd-Coments">
+                            <img
+                              src={comentario.usuario.foto}
+                              alt="foto de quem comentou"
+                              width={50}
+                              className="imgComents"
+                              height={50}
+                            />
+                            <p className="pd-User">{comentario.usuario.nome}</p>
+                          </div>
+                          <p className="pd-Texto">{comentario.texto}</p>
+                        </div>
+                      ))}
+                  </Accordion>
+                </div>
+                {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
+                <CardActions>
+                  <CardActions>
+                    <Typography variant="body2" component="p">
+                      {/* {post.usuario?.nome} */}
+                    </Typography>
+                    {/* formulário de preenchimento do comentário */}
+                    <form onSubmit={handleSubmit}>
+                      <input
+                        type="text"
+                        value={comment.texto}
+                        name="texto"
+                        onChange={(event) => handleChange(event)}
+                        placeholder="Digite seu comentário"
+                        id={post.id.toString()}
+                        className="input"
                       />
-                      <p className="pd-User">{comentario.usuario.nome}</p>
-                    </div>
-                    <p className="pd-Texto">{comentario.texto}</p>
-                  </div>
-                ))}
-                </Accordion>
-            </div>
-            {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
-            <CardActions>
-              <CardActions>
-                <Typography variant="body2" component="p">
-                  {/* {post.usuario?.nome} */}
-                </Typography>
-                {/* formulário de preenchimento do comentário */}
-                <form onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    value={comment.texto}
-                    name="texto"
-                    onChange={(event) => handleChange(event)}
-                    placeholder="Digite seu comentário"
-                    id={post.id.toString()}
-                    className="input"
-                  />
-                  <button className="button-coments">
-                    <div className="svg-wrapper-1 ">
-                      <div className="svg-wrapper">
-                        <svg
-                          height="24"
-                          width="24"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M0 0h24v24H0z" fill="none"></path>
-                          <path
-                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                            fill="currentColor"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                    <span>Publicar</span>
-                  </button>
-                </form>
+                      <button className="button-coments">
+                        <div className="svg-wrapper-1 ">
+                          <div className="svg-wrapper">
+                            <svg
+                              height="24"
+                              width="24"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M0 0h24v24H0z" fill="none"></path>
+                              <path
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                fill="currentColor"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span>Publicar</span>
+                      </button>
+                    </form>
 
-                {/* formulário de preenchimento do comentário */}
-              </CardActions>
+                    {/* formulário de preenchimento do comentário */}
+                  </CardActions>
 
-              {/* aqui fica os botoes de atualizar e deletar caso precise colocar de novo */}
-            </CardActions>
-            
-          </Box>
-          </Card>
+                  {/* aqui fica os botoes de atualizar e deletar caso precise colocar de novo */}
+                </CardActions>
+              </Box>
+            </Card>
           </Grid>
         </Box>
       ))}
