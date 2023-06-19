@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { TokenState } from "../../../../store/tokens/tokensReducer";
+import { toast } from "react-toastify";
 
 function AtualizaPerfil() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -51,14 +52,41 @@ function AtualizaPerfil() {
             Authorization: token,
           },
         });
-        alert("Usuário cadastrado com sucesso");
+        toast.success("Usuário atualizado com sucesso!", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
         setUsuario({ ...usuario, senha: "" });
         setConfirmarSenha("");
       } catch (error) {
-        alert("Falha ao cadastrar o usuário, verifique os campos");
+        toast.error("Falha ao atualizar o usuário, verifique os campos!", {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        });
       }
     } else {
-      alert("Os campos de Senha e Confirmar Senha estão diferentes");
+      toast.error("Os campos de Senha e Atualizar Senha estão diferentes, tente novamente!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
       setUsuario({ ...usuario, senha: "" });
       setConfirmarSenha("");
     }
