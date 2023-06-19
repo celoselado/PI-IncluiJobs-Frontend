@@ -231,6 +231,7 @@ function CadastroPost() {
           size="small"
           margin="normal"
           fullWidth
+          required
         />
         <TextField
           value={postagem.descricao}
@@ -250,6 +251,7 @@ function CadastroPost() {
           margin="normal"
           size="small"
           fullWidth
+          required
         />
         <TextField
           value={postagem.status}
@@ -292,10 +294,11 @@ function CadastroPost() {
         />
 
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-helper-label">Tema</InputLabel>
+          <InputLabel id="demo-simple-select-helper-label" required>Tema</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
+            required
             onChange={(event) =>
               buscaId(`/temas/${event.target.value}`, setTema, {
                 headers: {
@@ -311,6 +314,7 @@ function CadastroPost() {
             ))}
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+          <FormHelperText style={{color: "red"}}>Os campos com * são obrigatórios</FormHelperText>
           <Button
             type="submit"
             variant="contained"

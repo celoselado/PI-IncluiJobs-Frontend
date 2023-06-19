@@ -12,6 +12,7 @@
     padding: 0.8em;
     padding-bottom: 1.4em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   flex-direction: column;
   }
 
   .card::after {
@@ -79,7 +80,7 @@
     flex-direction: column-reverse;
     margin: auto;
     width: 60vw;
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
   .imgComents {
     border-radius: 90%;
@@ -95,10 +96,8 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    background: floralwhite;
     padding: 0.8em;
     padding-bottom: 1.4em;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   .pd-Coments {
     padding-bottom: 25px;

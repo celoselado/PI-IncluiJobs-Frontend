@@ -186,8 +186,8 @@ function ListaPostagem() {
                   Postado por: {post.usuario?.nome}
                 </Typography>
               </CardContent>
-            </Card>
-          </Grid>
+            
+          
           {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
           <Box className="box-Coments">
             <div>
@@ -219,7 +219,6 @@ function ListaPostagem() {
                 ))}
                 </Accordion>
             </div>
-
             {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
             <CardActions>
               <CardActions>
@@ -263,8 +262,10 @@ function ListaPostagem() {
 
               {/* aqui fica os botoes de atualizar e deletar caso precise colocar de novo */}
             </CardActions>
+            
           </Box>
-          
+          </Card>
+          </Grid>
         </Box>
       ))}
     </div>
