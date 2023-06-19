@@ -1,3 +1,21 @@
+![Logo](https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=449&height=116)
+
+
+# Projeto Integrador Desenvolvedor Fullstack Java - Generation Brasil (Frontend)
+
+# Descrição
+
+O objetivo do projeto é criar uma rede social que conecte grupos de pessoas que enfrentam dificuldades para ingressar ou reingressar no mercado de trabalho, como pessoas LGBTQIA+, mulheres, pessoas negras ou pardas, pessoas com deficiência, ex-presidiários, entre outros, com empresas que possuem vagas voltadas para esses grupos. A ideia é criar uma plataforma inclusiva e acessível para que essas pessoas possam encontrar oportunidades e se conectar com outras pessoas em situações similares.
+
+
+## Desenvolvedores
+
+- [@AlineSoglia](https://github.com/alinesoglia)
+- [@ErenildaTavares](https://github.com/ErenildaTavares)
+- [@MarceloAlexandre](https://github.com/celoselado)
+- [@RaylaneCosta](https://github.com/yarsico)
+- [@RebecaLPereira](https://github.com/RebecaLPereira)
+- [@ViniciusSilva](https://github.com/VinnyPC)
 
 ## Como utilizar IncluiJobs
 
