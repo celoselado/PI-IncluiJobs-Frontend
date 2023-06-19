@@ -12,7 +12,7 @@
     padding: 0.8em;
     padding-bottom: 1.4em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    flex-direction: column;
+   flex-direction: column;
   }
 
   .card::after {
@@ -105,10 +105,6 @@
     margin: 10px;
     padding: 10px;
   }
-
-  .pd-Coments:hover {
-    background-color: blue;
-  }
   .bg-Coments {
     margin: 10px;
     background-color: rgba(128, 128, 128, 0.113);
@@ -127,6 +123,7 @@
     padding: 6px;
     border: 1px;
     display: flex;
+    
   }
 
   .button-coments {
@@ -142,48 +139,50 @@
     border-radius: 16px;
     overflow: hidden;
     transition: all 0.2s;
-  }
 
+  }
+  
   .button-coments span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
   }
-
+  
   .button-coments svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
   }
-
+  
   .button-coments:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
   }
-
+  
   .button-coments:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
   }
-
+  
   .button-coments:hover span {
     transform: translateX(5em);
   }
-
+  
   .button-coments:active {
     transform: scale(0.95);
   }
-
+  
   @keyframes fly-1 {
     from {
       transform: translateY(0.1em);
     }
-
+  
     to {
       transform: translateY(-0.1em);
     }
   }
+
 }
 
-.image {
+.image{
   display: flex;
   justify-content: center;
 }
