@@ -105,6 +105,10 @@
     margin: 10px;
     padding: 10px;
   }
+  .pd-Coments:hover{
+    color: blue;
+  }
+
   .bg-Coments {
     margin: 10px;
     background-color: rgba(128, 128, 128, 0.113);
