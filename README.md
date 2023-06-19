@@ -58,7 +58,7 @@ Essa página mostra apenas as postagens de todos os usuários e seus comentário
 
 Todas as postagens podem receber comentários. Para comentar basta ir até o final da postagem, clicar no campo "Digite seu comentário" e quando terminar, clicar em "Publicar".
 
-![Comentários](https://i.postimg.cc/pdDcf1JF/image.png)
+![Comentários]([https://i.postimg.cc/pdDcf1JF/image.png](https://i.postimg.cc/pdDcf1JF/image.png))
 
 ### Lista de temas
 
