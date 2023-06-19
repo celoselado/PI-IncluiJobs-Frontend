@@ -6,6 +6,8 @@ import {
   CardActions,
   Button,
   Grid,
+  Accordion,
+  AccordionSummary,
 } from "@material-ui/core";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -189,7 +191,14 @@ function ListaPostagem() {
           {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
           <Box className="box-Coments">
             <div>
-              <Typography className="pd-Coments">Comentarios:</Typography>
+            <Accordion>
+            <AccordionSummary
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+              <Typography className="pd-Coments">Ver Comentários
+              </Typography>
+              </AccordionSummary>
 
               {comments
                 .filter((comentario) => comentario.postagem.id === post.id)
@@ -208,6 +217,7 @@ function ListaPostagem() {
                     <p className="pd-Texto">{comentario.texto}</p>
                   </div>
                 ))}
+                </Accordion>
             </div>
 
             {/* mapeamento dos comentários de cada uma das postagens, para não exibir comentários de uma postagem na outra */}
