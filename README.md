@@ -1,23 +1,4 @@
 
-![Logo](https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=449&height=116)
-
-
-# Projeto Integrador Desenvolvedor Fullstack Java - Generation Brasil (Frontend)
-
-# Descrição
-
-O objetivo do projeto é criar uma rede social que conecte grupos de pessoas que enfrentam dificuldades para ingressar ou reingressar no mercado de trabalho, como pessoas LGBTQIA+, mulheres, pessoas negras ou pardas, pessoas com deficiência, ex-presidiários, entre outros, com empresas que possuem vagas voltadas para esses grupos. A ideia é criar uma plataforma inclusiva e acessível para que essas pessoas possam encontrar oportunidades e se conectar com outras pessoas em situações similares.
-
-
-## Desenvolvedores
-
-- [@AlineSoglia](https://github.com/alinesoglia)
-- [@ErenildaTavares](https://github.com/ErenildaTavares)
-- [@MarceloAlexandre](https://github.com/celoselado)
-- [@RaylaneCosta](https://github.com/yarsico)
-- [@RebecaLPereira](https://github.com/RebecaLPereira)
-- [@ViniciusSilva](https://github.com/VinnyPC)
-
 ## Como utilizar IncluiJobs
 
 ### Cadastro
@@ -54,12 +35,6 @@ Essa página mostra apenas as postagens de todos os usuários e seus comentário
 
 ![Postagens](https://i.postimg.cc/QxFvwmqF/image.png)
 
-### Comentários
-
-Todas as postagens podem receber comentários. Para comentar basta ir até o final da postagem, clicar no campo "Digite seu comentário" e quando terminar, clicar em "Publicar".
-
-![Comentários]([https://i.postimg.cc/pdDcf1JF/image.png](https://i.postimg.cc/pdDcf1JF/image.png))
-
 ### Lista de temas
 
 Essa página mostra todos os temas já cadastrados por outros usuários. Você pode atualizar ou deleta-los se quiser.
@@ -77,6 +52,12 @@ Essa página é exclusiva para criar temas. Para criar, basta preencher o campo 
 Essa página contém a foto, informações do usuário e todas as postagens que foram feitas. Clicando em "Atualizar Perfil", você tem acesso a suas informações e pode alterar algumas como o link da foto de perfil e o nome apenas confirmando a senha.
 
 ![Perfil](https://i.postimg.cc/hjtWZBjm/image.png)
+
+### Comentários
+
+Todas as postagens podem receber comentários. Para comentar basta ir até o final da postagem, clicar no campo "Digite seu comentário" e quando terminar, clicar em "Publicar".
+
+Print: https://i.ibb.co/mNJVhhY/image.png
 
 ## Responsividade
 
