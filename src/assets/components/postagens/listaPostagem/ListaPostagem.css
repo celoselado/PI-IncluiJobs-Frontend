@@ -12,7 +12,7 @@
     padding: 0.8em;
     padding-bottom: 1.4em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   flex-direction: column;
+   flex-direction: column-reverse;
   }
 
   .card::after {
@@ -104,7 +104,12 @@
     display: flex;
     margin: 10px;
     padding: 10px;
+  
   }
+  
+.pd-Coments:hover {
+  background-color: blue; 
+}
   .bg-Coments {
     margin: 10px;
     background-color: rgba(128, 128, 128, 0.113);
