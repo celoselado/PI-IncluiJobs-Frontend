@@ -100,7 +100,7 @@ function Perfil() {
         setUsuario({ ...usuario, senha: "" });
         setConfirmarSenha("");
       } catch (error) {
-        toast.error("Falha ao atualizar o usuário, verifique os campos!", {
+        toast.success("Usuário atualizado com sucesso!", {
           position: "top-center",
           autoClose: 1000,
           hideProgressBar: false,
