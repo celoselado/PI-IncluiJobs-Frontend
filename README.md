@@ -1,5 +1,3 @@
-![Logo](https://media.discordapp.net/attachments/1094735633810997421/1113462405985480824/logoIncluiJobs2_1atual.png?width=449&height=116)
-
 
 # Projeto Integrador Desenvolvedor Fullstack Java - Generation Brasil (Frontend)
 
